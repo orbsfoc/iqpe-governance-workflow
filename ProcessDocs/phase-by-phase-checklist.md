@@ -25,6 +25,8 @@ If any item is missing: `BLOCKED`.
 - [ ] Technical/adaptor decisions include authority fields and approved backing
 - [ ] Architect phase gate file exists
 - [ ] MCP evidence appended
+- [ ] New library proposals include machine-readable decisions with valid approval status
+- [ ] Phase/environment technology policy evaluation produced for newly introduced technologies
 
 ## 3. Developer gate
 
@@ -35,6 +37,7 @@ If any item is missing: `BLOCKED`.
 - [ ] Traceability updated (`PLAN -> TEST`)
 - [ ] Developer phase gate file exists
 - [ ] MCP evidence appended
+- [ ] Process docs under `ProcessDocs/` updated when workflow/runtime commands change
 
 ## 4. Release gate
 
@@ -45,6 +48,8 @@ If any item is missing: `BLOCKED`.
 - [ ] `docs/tech-radar.md` updated with current technology adoption status
 - [ ] `docs/handoffs/release/tech-radar-summary.md` produced for decision board
 - [ ] Missing artifacts/evidence force `BLOCKED`
+- [ ] `v2-demo-readiness` report status is `pass`
+- [ ] Slice graph, catalog search, library decision lint, tech policy eval, tech radar lint, architecture-ops lint, topology lint, data-boundary lint, metadata-overview lint, and resource-variance summary are present and current
 
 ## 5. Final decision criteria
 

@@ -53,3 +53,34 @@
 - provenance template
 
 (Templates are retrieved through MCP template actions/tools.)
+
+## G) IQPE-DocsStruct demo governance artifacts
+
+Required fixture artifacts under `portfolio/iqpe-product-template/demo-project-v3/artifacts/`:
+
+- `session-plan-orchestration.yaml`
+- `library-catalog.yaml`
+- `new-library-decisions.yaml`
+- `phase-tech-policy.yaml`
+- `tech-radar-summary.yaml`
+- `architecture-operations-boundary.yaml`
+- `portfolio-topology.yaml`
+- `data-boundary-evidence.yaml`
+- `code-unit-metadata.yaml`
+- `human-readable-overviews.yaml`
+- `plan-resource-estimation.yaml`
+- `developer-agent-usage-report.yaml`
+
+Generated validation/evaluation reports currently expected:
+
+- `slice-graph-lint-report.yaml`
+- `library-search-report.yaml`
+- `library-decision-lint-report.yaml`
+- `tech-policy-eval-report.yaml`
+- `tech-radar-lint-report.yaml`
+- `architecture-ops-lint-report.yaml`
+- `topology-lint-report.yaml`
+- `data-boundary-lint-report.yaml`
+- `metadata-overview-lint-report.yaml`
+- `resource-variance-summary.yaml`
+- `v2-demo-readiness-report.yaml`
