@@ -1,0 +1,27 @@
+flowchart TD
+    A[Start run] --> B[Install skills and workflow pack]
+    B --> C[Run mcp.action.local_mcp_install]
+    C --> D[Run mcp.action.local_mcp_configure]
+    D --> E[Run mcp.action.bootstrap_workflow_pack]
+    E --> F{bootstrap-report.md exists?}
+    F -- No --> X1[BLOCKED]
+    F -- Yes --> G[Run mcp.action.workflow_preflight_check]
+    G --> H{workflow-preflight.json status PASS?}
+    H -- No --> X2[BLOCKED]
+    H -- Yes --> I[Run mcp.action.spec_tech_detect]
+    I --> J{spec-tech-detect.json exists?}
+    J -- No --> X3[BLOCKED]
+    J -- Yes --> K[Phase 1 Product Owner]
+    K --> L{PO gate complete?}
+    L -- No --> X4[BLOCKED]
+    L -- Yes --> M[Phase 2 Architect]
+    M --> N{Architect gate complete?}
+    N -- No --> X5[BLOCKED]
+    N -- Yes --> O[Phase 3 Developer]
+    O --> P{Developer gate complete?}
+    P -- No --> X6[BLOCKED]
+    P -- Yes --> Q[Phase 4 Release Review]
+    Q --> R{Release decision}
+    R -- PASS --> S[GO]
+    R -- FAIL --> T[NO-GO]
+    R -- BLOCKED --> U[BLOCKED]

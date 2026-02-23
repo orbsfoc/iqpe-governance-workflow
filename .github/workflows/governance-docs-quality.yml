@@ -1,0 +1,25 @@
+name: governance-docs-quality
+
+on:
+  pull_request:
+  push:
+    branches: [ main ]
+
+jobs:
+  validate-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify required governance docs
+        run: |
+          test -f README.md
+          test -f CHANGELOG.md
+          test -f OWNERS.md
+          test -f docs/README.md
+      - name: Verify extracted governance content
+        run: |
+          test -f prompts/productWorkflowPack/README.md
+          test -f prompts/productWorkflowPack/00-orchestrator.md
+          test -f prompts/productWorkflowPack/04-release-review.md
+          test -f ProcessDocs/process-overview.md
+          test -f ProcessDocs/phase-by-phase-checklist.md

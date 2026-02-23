@@ -1,0 +1,37 @@
+sequenceDiagram
+    participant User as Operator
+    participant MCP as MCP Actions
+    participant Repo as Repo Files
+    participant PO as Product Owner
+    participant Arch as Architect
+    participant Dev as Developer
+    participant Rel as Release Reviewer
+
+    User->>MCP: local_mcp_install
+    User->>MCP: local_mcp_configure(target_root)
+    User->>MCP: bootstrap_workflow_pack(target_root, spec_dir)
+    MCP->>Repo: docs/tooling/bootstrap-report.md
+    User->>MCP: workflow_preflight_check(target_root, spec_dir)
+    MCP->>Repo: docs/tooling/workflow-preflight.json
+    User->>MCP: spec_tech_detect(target_root, spec_dir)
+    MCP->>Repo: docs/tooling/spec-tech-detect.json
+
+    PO->>Repo: docs/product-intent.md
+    PO->>Repo: docs/requirements.md
+    PO->>Repo: docs/handoffs/po/phase-gate.md
+    PO->>Repo: docs/tooling/mcp-usage-evidence.md
+
+    Arch->>Repo: docs/implementation-plan.md
+    Arch->>Repo: docs/technology-constraints.md
+    Arch->>Repo: docs/diagrams/*.mmd
+    Arch->>Repo: docs/handoffs/architect/phase-gate.md
+    Arch->>Repo: docs/tooling/mcp-usage-evidence.md
+
+    Dev->>Repo: docs/change-log.md
+    Dev->>Repo: docs/deviations.md
+    Dev->>Repo: docs/handoffs/dev/phase-gate.md
+    Dev->>Repo: docs/tooling/mcp-usage-evidence.md
+
+    Rel->>Repo: docs/release-review.md
+    Rel->>Repo: docs/handoffs/release/phase-gate.md
+    Rel->>Repo: docs/handoffs/release/final-decision.md
