@@ -130,6 +130,9 @@ Required action baseline includes:
 - `mcp.action.workflow_preflight_check`
 - `mcp.action.agent_skill_coverage_check`
 
+AI usage reporting template:
+- `ai-usage-report-template.md` (copy to `docs/tooling/ai-usage-report.md` and fill planned vs actual metrics)
+
 ## AI design patterns
 - Use planner-executor-verifier-governor pattern.
 - Prefer deterministic tool actions over open-ended LLM generation.
