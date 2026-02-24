@@ -16,3 +16,7 @@ These diagrams visualize the workflow lifecycle and artifact production path.
 - `stage-02-architect.mmd`: implementation planning, constraints/ADRs/diagrams, dependency modeling, and architect gates
 - `stage-03-developer.mmd`: PLAN-driven implementation loops, review/remediation loops, integration loops, and developer gates
 - `stage-04-release-review.mmd`: final readiness checks, severity/governance decisions, and GO/NO-GO/BLOCKED outcomes
+
+## Companion references
+
+- `mcp-capability-matrix.md`: stage-by-stage mapping of MCP servers, tools/actions, skills, and expected artifacts

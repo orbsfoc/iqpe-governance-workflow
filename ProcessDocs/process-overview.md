@@ -11,6 +11,7 @@ Describe the current MCP-first workflow lifecycle, including phase sequencing, f
 - Supporting runbook: `MCP-ACTION-RUNBOOK.md`
 - Runtime CLI root: `Tooling/docflow`
 - Process diagrams index: `ProcessDocs/process-diagrams.md`
+- MCP capability matrix: `ProcessDocs/mcp-capability-matrix.md`
 
 ## Core inputs and sources of truth
 

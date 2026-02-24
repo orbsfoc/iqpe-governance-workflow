@@ -30,6 +30,10 @@ Configured in `.vscode/mcp.json`:
 - `mcp.action.template_list`
 - `mcp.action.template_get`
 
+Stage-to-capability reference:
+
+- `ProcessDocs/mcp-capability-matrix.md`
+
 ## When each action is expected
 
 - Before phase execution:
