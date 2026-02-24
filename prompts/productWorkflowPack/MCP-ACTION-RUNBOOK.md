@@ -36,9 +36,9 @@ Expected artifact:
 ## If `run_action` client interface is unavailable in-session
 Preferred: use another MCP-capable client connected to the same MCP servers/skills and run the required actions.
 
-Self-service option (product team can execute directly from installed skill):
+Self-service option (product team can execute directly from installed skill, from any current directory):
 
-`go run ./.github/skills/local-mcp-setup/bootstrap_preflight.go --target-root <target_root_abs_path> --spec-dir <spec_dir_path>`
+`TARGET_ROOT=<target_root_abs_path> SPEC_DIR=<spec_dir_path> GO_BIN="$(command -v go)" && "$GO_BIN" run "$TARGET_ROOT/.github/skills/local-mcp-setup/bootstrap_preflight.go" --target-root "$TARGET_ROOT" --spec-dir "$SPEC_DIR"`
 
 This command merges `SPEC_DIR` detection with the installed corporate approved baseline file:
 - `./.github/skills/local-mcp-setup/corporate-approved-tech.json`

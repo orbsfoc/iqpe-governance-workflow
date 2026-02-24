@@ -86,7 +86,7 @@ If required artifacts are still missing after this step, execute `MCP-ACTION-RUN
 If MCP client cannot call `run_action` in the current session, use:
 - Another MCP-capable client connected to the same MCP servers/skills and execute bootstrap + preflight actions per `MCP-ACTION-RUNBOOK.md`.
 - Or self-service from installed skill:
-	- `go run ./.github/skills/local-mcp-setup/bootstrap_preflight.go --target-root <target_root_abs_path> --spec-dir <spec_dir_path>`
+	- `TARGET_ROOT=<target_root_abs_path> SPEC_DIR=<spec_dir_path> GO_BIN="$(command -v go)" && "$GO_BIN" run "$TARGET_ROOT/.github/skills/local-mcp-setup/bootstrap_preflight.go" --target-root "$TARGET_ROOT" --spec-dir "$SPEC_DIR"`
 	- Confirm generated artifacts include `docs/tooling/spec-tech-detect.json` before architect phase.
 	- The generated detection merges `SPEC_DIR` with `./.github/skills/local-mcp-setup/corporate-approved-tech.json`.
 
