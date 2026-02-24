@@ -17,6 +17,7 @@ Perform final readiness review against requirements, architecture plan, diagrams
 ## Required checks
 - Requirement coverage (`REQ-*`)
 - Traceability completeness: `REQ -> PLAN -> DIAG -> TEST/DEF`
+- Data architecture consistency between `docs/data-architecture-decision.md`, constraints, and implementation evidence
 - Diagram alignment with implemented behavior
 - Error-path verification evidence
 - MCP/tooling validation evidence for fresh collaborator
@@ -31,6 +32,7 @@ Perform final readiness review against requirements, architecture plan, diagrams
 - Authority completeness: ADR/constraints artifacts include `Authoritative Source`, `Approval Owner`, and `Approval Status`
 - Code quality governance integrity: approved ADR exists for coding principles and mandatory code review feedback loops
 - Review evidence integrity: reviewer findings and developer remediation responses are recorded for implemented scope
+- Handoff routing integrity: `docs/handoffs/routing-matrix.md` contains required receiver acknowledgments with evidence
 
 ## Required outputs
 - `docs/release-review.md`
@@ -55,6 +57,9 @@ Perform final readiness review against requirements, architecture plan, diagrams
 
 ## Decision rules
 - Missing required artifacts or unresolved `TC-*`: `BLOCKED`
+- Runtime data architecture mismatch without approved deviation: `BLOCKED`
+- Missing handoff acknowledgment evidence for required transitions: `BLOCKED`
+- Open planning-vs-skill capability gap without approved exception: `BLOCKED`
 - Missing AI usage report when telemetry is available: `BLOCKED`
 - Any adaptor/service selection without corporate ADR backing: `BLOCKED`
 - Missing authority fields or any non-`APPROVED` authority status for required technical/adaptor decisions: `BLOCKED`

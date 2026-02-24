@@ -24,14 +24,18 @@ This process must support any product domain while using repository technical gu
 2) Confirm bootstrap evidence at `docs/tooling/bootstrap-report.md`.
 3) Run `mcp.action.scaffold_service_workspace`.
 4) Confirm `repos/` workspace and naming ADR (`docs/adr/ADR-0001-repo-naming-conventions.md`) exist.
-5) Confirm MCP config present at `.vscode/mcp.json`.
-6) Initialize `docs/tooling/mcp-usage-evidence.md` from `.iqpe-workflow/productWorkflowPack/mcp-usage-evidence-template.md`.
-7) Run `mcp.action.workflow_preflight_check`.
-8) Confirm PASS evidence at `docs/tooling/workflow-preflight.json`.
-9) Run `mcp.action.spec_tech_detect`.
-10) Confirm evidence at `docs/tooling/spec-tech-detect.json`.
-11) Run `mcp.action.feedback_tree_policy_lint`; if result is not PASS, set workflow to `BLOCKED` and stop.
-12) Run `mcp.action.phase_precondition_check` with `phase=01` before phase-01 execution.
+5) Confirm baseline artifacts exist:
+	- `docs/data-architecture-decision.md`
+	- `docs/handoffs/routing-matrix.md`
+	- `docs/integration/compose-mode-decision.md`
+6) Confirm MCP config present at `.vscode/mcp.json`.
+7) Initialize `docs/tooling/mcp-usage-evidence.md` from `.iqpe-workflow/productWorkflowPack/mcp-usage-evidence-template.md`.
+8) Run `mcp.action.workflow_preflight_check`.
+9) Confirm PASS evidence at `docs/tooling/workflow-preflight.json`.
+10) Run `mcp.action.spec_tech_detect`.
+11) Confirm evidence at `docs/tooling/spec-tech-detect.json`.
+12) Run `mcp.action.feedback_tree_policy_lint`; if result is not PASS, set workflow to `BLOCKED` and stop.
+13) Run `mcp.action.phase_precondition_check` with `phase=01` before phase-01 execution.
 If initialization fails, set workflow to `BLOCKED`.
 
 ## Feedback location and ownership guardrails (mandatory)
@@ -70,6 +74,10 @@ If initialization fails, set workflow to `BLOCKED`.
 	3) `.github/skills/local-mcp-setup/corporate-docs/planning-behavior-profile.yaml` (local skills fallback)
 - Record resolved settings and applied decisions in `docs/planning-behavior-resolution.md`.
 - If profile cannot be loaded or resolution artifact is missing, workflow status must be `BLOCKED`.
+
+## Planning-vs-skill capability policy (mandatory)
+- If phase planning requires capabilities not available in current MCP skill/action set, create `docs/tooling/skill-capability-gap.md` using `skill-capability-gap-template.md`.
+- Open capability gaps must remain `BLOCKED` until closure evidence is produced or an approved exception is recorded.
 
 ## Global constraints
 - Use only tools available in this workspace/toolchain and repository-contained information unless explicitly authorized.

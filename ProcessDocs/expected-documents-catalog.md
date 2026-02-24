@@ -6,6 +6,9 @@
 - `docs/tooling/workflow-preflight.json` (must contain `status: PASS`)
 - `docs/tooling/spec-tech-detect.json`
 - `docs/tooling/mcp-usage-evidence.md`
+- `docs/data-architecture-decision.md`
+- `docs/handoffs/routing-matrix.md`
+- `docs/integration/compose-mode-decision.md`
 
 ## B) Product Owner outputs
 
@@ -45,12 +48,17 @@
 - `docs/handoffs/release/final-decision.md`
 - `docs/tech-radar.md`
 - `docs/handoffs/release/tech-radar-summary.md`
+- `docs/data-architecture-decision.md`
+- `docs/handoffs/routing-matrix.md`
+- `docs/integration/compose-mode-decision.md`
+- `docs/tooling/skill-capability-gap.md` (required when planning exceeded current skill/action capability)
 
 ## F) Gate/evidence templates expected in use
 
 - phase gate template
 - evidence block template
 - provenance template
+
 
 (Templates are retrieved through MCP template actions/tools.)
 

@@ -81,6 +81,7 @@ If implementation structure diverges from `docs/repo-topology-decision.md`, stat
 ## Required outputs
 - Implementation artifacts
 - Run/build/test instructions
+- `docs/integration/compose-mode-decision.md`
 - Test evidence and command outputs
 - Test evidence must use `test-execution-evidence-template.md` format (`command`, `expected`, `actual`, `exit_code`, `artifact_path`).
 - Updated repository change log (`CHANGELOG.md` or `docs/change-log.md`) with key-doc references
@@ -97,3 +98,11 @@ If implementation structure diverges from `docs/repo-topology-decision.md`, stat
 Use `templates/phase-gate-template.md`.
 Status cannot be `PASS` unless required tests, error-path evidence, change-log updates, and documented reviewer feedback/remediation are present.
 Status cannot be `PASS` when `execution_status` remains `draft-only`.
+
+## Compose mode contract (mandatory)
+- Record selected compose mode in `docs/integration/compose-mode-decision.md` using `compose-mode-decision-template.md`.
+- Allowed values:
+   - `local-dev`
+   - `integration-demo`
+- For `integration-demo`, include evidence for repo checkout/update and compose integration verification.
+- If compose mode evidence is missing for selected mode, phase status must be `BLOCKED`.

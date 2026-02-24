@@ -163,6 +163,10 @@ Draft/promotion and governance templates:
 - `draft-promotion-checklist-template.md`
 - `adr-approval-transition-template.md`
 - `repo-naming-conventions-adr-template.md`
+- `data-architecture-decision-template.md`
+- `handoff-routing-matrix-template.md`
+- `compose-mode-decision-template.md`
+- `skill-capability-gap-template.md`
 - `diagrams-drift-protocol-template.md`
 - `test-execution-evidence-template.md`
 - `severity-classification-template.md`

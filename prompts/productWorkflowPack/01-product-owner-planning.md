@@ -17,9 +17,11 @@ Define product intent and requirement baseline for a fresh product domain, const
 - `docs/risks-assumptions.md`
 - `docs/repo-topology-decision.md`
 - `docs/openapi-contract-plan.md`
+- `docs/data-architecture-decision.md`
 - `docs/plans/index.md`
 - `docs/plans/PLAN-*.md` (when per-story storage is configured)
 - `docs/planning-behavior-resolution.md`
+- `docs/handoffs/routing-matrix.md`
 - `docs/handoffs/po/phase-gate.md`
 
 ## Planning behavior profile loading (mandatory)
@@ -43,6 +45,7 @@ Define product intent and requirement baseline for a fresh product domain, const
 	- `plan_traceability_required`
 - If `plan_storage_mode=per-story-files`, planning must produce per-story plan files under the configured directory using configured naming pattern.
 - `plan_index_file` must map each `REQ-*` to one or more `PLAN-*` IDs and corresponding plan file paths.
+- For multi-repo/service decomposition, index rows must include a deterministic service/repo target in plan metadata and provenance.
 
 ## Repository topology decision (mandatory)
 Planning must explicitly decide and record implementation topology in `docs/repo-topology-decision.md`.
@@ -92,6 +95,16 @@ If topology decision is missing, phase status must be `BLOCKED`.
 If planning behavior profile is not loaded/resolved, phase status must be `BLOCKED`.
 
 If required plan storage controls are missing or violated, phase status must be `BLOCKED`.
+
+## Data architecture decision (mandatory)
+- Capture canonical runtime data architecture in `docs/data-architecture-decision.md` using `data-architecture-decision-template.md`.
+- This artifact must declare expected runtime database/cache engines and allowed deviations.
+- If declared runtime data architecture conflicts with implementation intent and no approved deviation is present, status must be `BLOCKED`.
+
+## Planning-vs-skill capability gate (mandatory)
+- If planning intent requires capabilities not currently available in installed MCP skills/actions, create `docs/tooling/skill-capability-gap.md` using `skill-capability-gap-template.md`.
+- Gap artifact must include owner, ETA, unblock criteria, and required closure evidence path.
+- Open capability gaps keep phase status `BLOCKED` unless owner-approved exception is recorded.
 
 ## Requirement quality rules
 - Each requirement must include acceptance criteria in Given/When/Then format.

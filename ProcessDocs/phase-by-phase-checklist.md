@@ -7,6 +7,9 @@
 - [ ] `workflow-preflight.json` exists with `PASS`
 - [ ] `spec-tech-detect.json` exists
 - [ ] `mcp-usage-evidence.md` initialized
+- [ ] `docs/data-architecture-decision.md` exists
+- [ ] `docs/handoffs/routing-matrix.md` exists
+- [ ] `docs/integration/compose-mode-decision.md` exists
 
 If any item is missing: `BLOCKED`.
 
@@ -23,6 +26,7 @@ If any item is missing: `BLOCKED`.
 - [ ] Diagrams produced in Mermaid
 - [ ] Traceability `REQ -> PLAN -> DIAG` complete
 - [ ] Technical/adaptor decisions include authority fields and approved backing
+- [ ] Data architecture decision matches constraints/plans or approved deviation is recorded
 - [ ] Architect phase gate file exists
 - [ ] MCP evidence appended
 - [ ] New library proposals include machine-readable decisions with valid approval status
@@ -38,6 +42,7 @@ If any item is missing: `BLOCKED`.
 - [ ] Developer phase gate file exists
 - [ ] MCP evidence appended
 - [ ] Process docs under `ProcessDocs/` updated when workflow/runtime commands change
+- [ ] Compose mode decision exists and has evidence for selected mode
 
 ## 4. Release gate
 
@@ -48,6 +53,8 @@ If any item is missing: `BLOCKED`.
 - [ ] `docs/tech-radar.md` updated with current technology adoption status
 - [ ] `docs/handoffs/release/tech-radar-summary.md` produced for decision board
 - [ ] Missing artifacts/evidence force `BLOCKED`
+- [ ] Handoff routing matrix has required `ACKED` transitions with evidence paths
+- [ ] Open planning-vs-skill capability gaps are resolved or exception-approved
 - [ ] `v2-demo-readiness` report status is `pass`
 - [ ] Slice graph, catalog search, library decision lint, tech policy eval, tech radar lint, architecture-ops lint, topology lint, data-boundary lint, metadata-overview lint, and resource-variance summary are present and current
 

@@ -14,6 +14,7 @@
 - [ ] Plan artifacts are stored in configured planning directory with per-story traceability mapping
 - [ ] Adaptor/service selections are mapped to approved corporate ADR/technology sources
 - [ ] Repository topology decision ADR is present and approved
+- [ ] Data architecture decision exists (`docs/data-architecture-decision.md`) and matches constraints/runtime evidence or has approved deviation
 - [ ] Dependency model between split workstreams is documented and gated
 - [ ] Service-per-repo best-practice is applied for service-oriented scope, or approved ADR exceptions are recorded
 - [ ] Code quality/review ADR is present and approved (SOLID/DRY + feedback loops)
@@ -28,6 +29,8 @@
 - [ ] `mcp.action.scaffold_service_workspace` executed and reported PASS
 - [ ] `repos/` workspace exists with starter service repositories and `repos/demo-compose/`
 - [ ] Naming convention ADR exists at `docs/adr/ADR-0001-repo-naming-conventions.md`
+- [ ] Handoff routing matrix exists at `docs/handoffs/routing-matrix.md`
+- [ ] Compose mode decision exists at `docs/integration/compose-mode-decision.md`
 - [ ] MCP usage evidence recorded in `docs/tooling/mcp-usage-evidence.md`
 - [ ] Read-only ownership manifest exists at `docs/tooling/read-only-manifest.json`
 - [ ] Workflow feedback docs are created under `docs/feedback/workflow/` (not `docs/tooling/`, unless approved exception)
@@ -36,6 +39,7 @@
 - [ ] `mcp.action.phase_precondition_check` is PASS for current phase before phase authoring starts
 - [ ] `mcp.action.implementation_parity_check` returns PASS before phase-03 PASS
 - [ ] `mcp.action.release_blocker_ownership_lint` returns PASS before final release GO
+- [ ] Open planning-vs-skill gaps are tracked in `docs/tooling/skill-capability-gap.md` and resolved or exception-approved
 
 ## Process gates
 - [ ] Phase gates include PASS/FAIL/BLOCKED

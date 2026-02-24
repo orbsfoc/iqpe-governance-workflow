@@ -64,6 +64,10 @@ Template retrieval for phase artifacts:
 - `run_action` with `action_id: mcp.action.scaffold_service_workspace` and args:
 	- `target_root` (mandatory; absolute path to target demo repo root)
 	- `workspace_dir` (optional; default `repos`)
+- Confirm scaffold artifacts exist:
+	- `docs/data-architecture-decision.md`
+	- `docs/handoffs/routing-matrix.md`
+	- `docs/integration/compose-mode-decision.md`
 - `run_action` with `action_id: mcp.action.workflow_preflight_check` and args:
 	- `spec_dir` (mandatory)
 	- `target_root` (mandatory; absolute path to target demo repo root)

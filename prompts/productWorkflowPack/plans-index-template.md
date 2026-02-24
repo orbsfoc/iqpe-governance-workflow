@@ -12,9 +12,14 @@ Use this file as `docs/plans/index.md` when planning behavior profile resolves:
 - Plan traceability required:
 
 ## Story plan mapping
-| REQ ID | PLAN ID | Story/Workstream | Plan File Path | Owner | Status | DIAG IDs | TEST IDs |
-|---|---|---|---|---|---|---|---|
-| REQ-001 | PLAN-001 | Example story | docs/plans/PLAN-001-example-story.md | team-a | PLANNED | DIAG-001 | TEST-UNIT-001 |
+| REQ ID | PLAN ID | Story/Workstream | Plan File Path | Target Repo Path | Target Service ID | Owner | Status | DIAG IDs | TEST IDs |
+|---|---|---|---|---|---|---|---|---|---|
+| REQ-001 | PLAN-001 | Example story | docs/plans/PLAN-001-example-story.md | repos/go-application-service | SVC-EXAMPLE-001 | team-a | PLANNED | DIAG-001 | TEST-UNIT-001 |
+
+## Handoff routing linkage
+| PLAN ID | Producer Phase | Consumer Phase | Handoff ID | Routing Matrix Path | Ack Evidence Path |
+|---|---|---|---|---|---|
+| PLAN-001 | 01 | 02 | HO-001 | docs/handoffs/routing-matrix.md | docs/handoffs/ack/HO-001.md |
 
 ## Notes
 - Every `PLAN-*` must map to exactly one plan file path.
