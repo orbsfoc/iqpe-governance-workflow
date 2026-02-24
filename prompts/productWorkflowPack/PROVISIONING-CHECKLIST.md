@@ -14,6 +14,7 @@ Install Copilot-native skills (copy one or more) from `.github/skills/`:
 - Required for scaffolding:
 	- `local-mcp-setup`
 	- `project-bootstrap`
+	- `service-repo-scaffolding`
 	- `workflow-preflight-check`
 	- `spec-tech-detect`
 - Install location options:
@@ -60,6 +61,9 @@ Template retrieval for phase artifacts:
 - `run_action` with `action_id: mcp.action.bootstrap_workflow_pack` and args:
 	- `target_root` (mandatory; absolute path to target demo repo root)
 	- `spec_dir` (optional)
+- `run_action` with `action_id: mcp.action.scaffold_service_workspace` and args:
+	- `target_root` (mandatory; absolute path to target demo repo root)
+	- `workspace_dir` (optional; default `repos`)
 - `run_action` with `action_id: mcp.action.workflow_preflight_check` and args:
 	- `spec_dir` (mandatory)
 	- `target_root` (mandatory; absolute path to target demo repo root)

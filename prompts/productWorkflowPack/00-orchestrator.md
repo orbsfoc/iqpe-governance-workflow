@@ -22,13 +22,16 @@ This process must support any product domain while using repository technical gu
 ## Initialization (mandatory before phase execution)
 1) Run `mcp.action.bootstrap_workflow_pack`.
 2) Confirm bootstrap evidence at `docs/tooling/bootstrap-report.md`.
-3) Confirm MCP config present at `.vscode/mcp.json`.
-4) Initialize `docs/tooling/mcp-usage-evidence.md` from `.iqpe-workflow/productWorkflowPack/mcp-usage-evidence-template.md`.
-5) Run `mcp.action.workflow_preflight_check`.
-6) Confirm PASS evidence at `docs/tooling/workflow-preflight.json`.
-7) Run `mcp.action.spec_tech_detect`.
-8) Confirm evidence at `docs/tooling/spec-tech-detect.json`.
-9) Run `mcp.action.phase_precondition_check` with `phase=01` before phase-01 execution.
+3) Run `mcp.action.scaffold_service_workspace`.
+4) Confirm `repos/` workspace and naming ADR (`docs/adr/ADR-0001-repo-naming-conventions.md`) exist.
+5) Confirm MCP config present at `.vscode/mcp.json`.
+6) Initialize `docs/tooling/mcp-usage-evidence.md` from `.iqpe-workflow/productWorkflowPack/mcp-usage-evidence-template.md`.
+7) Run `mcp.action.workflow_preflight_check`.
+8) Confirm PASS evidence at `docs/tooling/workflow-preflight.json`.
+9) Run `mcp.action.spec_tech_detect`.
+10) Confirm evidence at `docs/tooling/spec-tech-detect.json`.
+11) Run `mcp.action.feedback_tree_policy_lint`; if result is not PASS, set workflow to `BLOCKED` and stop.
+12) Run `mcp.action.phase_precondition_check` with `phase=01` before phase-01 execution.
 If initialization fails, set workflow to `BLOCKED`.
 
 ## Feedback location and ownership guardrails (mandatory)

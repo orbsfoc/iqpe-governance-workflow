@@ -25,11 +25,17 @@
 ## Workspace setup
 - [ ] VS Code MCP config present at `.vscode/mcp.json`
 - [ ] `mcp.action.bootstrap_workflow_pack` executed with evidence in `docs/tooling/bootstrap-report.md`
+- [ ] `mcp.action.scaffold_service_workspace` executed and reported PASS
+- [ ] `repos/` workspace exists with starter service repositories and `repos/demo-compose/`
+- [ ] Naming convention ADR exists at `docs/adr/ADR-0001-repo-naming-conventions.md`
 - [ ] MCP usage evidence recorded in `docs/tooling/mcp-usage-evidence.md`
 - [ ] Read-only ownership manifest exists at `docs/tooling/read-only-manifest.json`
 - [ ] Workflow feedback docs are created under `docs/feedback/workflow/` (not `docs/tooling/`, unless approved exception)
 - [ ] Non-owner draft deliverables are created under `docs/drafts/workflow/` (not under `docs/feedback/**`)
+- [ ] `mcp.action.feedback_tree_policy_lint` returns PASS (no draft deliverables under `docs/feedback/**`)
 - [ ] `mcp.action.phase_precondition_check` is PASS for current phase before phase authoring starts
+- [ ] `mcp.action.implementation_parity_check` returns PASS before phase-03 PASS
+- [ ] `mcp.action.release_blocker_ownership_lint` returns PASS before final release GO
 
 ## Process gates
 - [ ] Phase gates include PASS/FAIL/BLOCKED

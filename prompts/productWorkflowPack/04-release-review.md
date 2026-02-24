@@ -45,6 +45,7 @@ Perform final readiness review against requirements, architecture plan, diagrams
 
 ## Severity and blocker metadata (mandatory)
 - Classify findings using `severity-classification-template.md`.
+- Run `mcp.action.release_blocker_ownership_lint` and require PASS before final GO decision.
 - Every NO-GO/BLOCKED blocker must include:
 	- `blocker_id`
 	- `owner_role`

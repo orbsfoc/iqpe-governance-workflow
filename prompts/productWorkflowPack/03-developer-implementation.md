@@ -24,6 +24,7 @@ Implement code from approved architect plan and diagrams, preserving traceabilit
 If any are missing, set status `BLOCKED`.
 
 Before drafting or implementation, run `mcp.action.phase_precondition_check` with `phase=03`; if result is not PASS, stop and keep status `BLOCKED`.
+Run `mcp.action.implementation_parity_check` before phase-03 PASS decision; if declared adaptor IDs in `docs/technology-constraints.md` do not match implemented adaptor directories, keep status `BLOCKED` until parity is resolved or approved exception is recorded.
 
 ## Implementation requirements
 - Implement against `PLAN-*` items; reference IDs in implementation notes.
