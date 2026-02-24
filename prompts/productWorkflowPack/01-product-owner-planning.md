@@ -25,6 +25,7 @@ Define product intent and requirement baseline for a fresh product domain, const
 - Allowed profile paths:
 	- `docs/source/02-architecture/planning-behavior-profile.yaml`
 	- `docs/source/DemoArchitectureDocs/planning-behavior-profile.yaml`
+	- `.github/skills/local-mcp-setup/corporate-docs/planning-behavior-profile.yaml`
 - `docs/planning-behavior-resolution.md` must capture:
 	- profile source path
 	- resolved behavior values used for this run

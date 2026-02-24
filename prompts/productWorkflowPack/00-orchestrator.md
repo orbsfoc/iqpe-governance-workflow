@@ -52,6 +52,7 @@ If initialization fails, set workflow to `BLOCKED`.
 - Preferred profile sources:
 	1) `docs/source/02-architecture/planning-behavior-profile.yaml` (architecture standards repo)
 	2) `docs/source/DemoArchitectureDocs/planning-behavior-profile.yaml` (mirror)
+	3) `.github/skills/local-mcp-setup/corporate-docs/planning-behavior-profile.yaml` (local skills fallback)
 - Record resolved settings and applied decisions in `docs/planning-behavior-resolution.md`.
 - If profile cannot be loaded or resolution artifact is missing, workflow status must be `BLOCKED`.
 
