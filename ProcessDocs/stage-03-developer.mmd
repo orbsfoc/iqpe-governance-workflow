@@ -25,3 +25,15 @@ flowchart TD
     D8 --> G2{Developer phase gate complete?}
     G2 -- No --> B2[BLOCKED: incomplete Dev gate]
     G2 -- Yes --> PASS[Developer PASS -> handoff to Release]
+
+        subgraph Stage3_MCP_References
+            SK3[Skills: project-bootstrap, workflow-preflight-check]
+            T3A[Tools/Actions: run_action template_get/skill_version_check, repo-read, docs-graph, policy checks]
+            SV3[Servers: docflow-actions-local, repo-read-local, docs-graph-local, policy-local]
+        end
+
+        D1 --> T3A
+        D1 --> SV3
+        D4 --> T3A
+        D7 --> SV3
+        D8 --> T3A

@@ -21,3 +21,15 @@ flowchart TD
     E1 --> G3{PO phase gate complete?}
     G3 -- No --> B3[BLOCKED: incomplete PO gate]
     G3 -- Yes --> PASS[PO PASS -> handoff to Architect]
+
+        subgraph Stage1_MCP_References
+            SK1[Skills: local-mcp-setup, project-bootstrap]
+            T1A[Tools/Actions: run_action planning_behavior_resolve, template_list/template_get, repo-read, docs-graph]
+            SV1[Servers: docflow-actions-local, repo-read-local, docs-graph-local, policy-local]
+        end
+
+        P1 --> T1A
+        P1 --> SV1
+        P7 --> T1A
+        P7 --> SK1
+        E1 --> T1A

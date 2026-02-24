@@ -24,3 +24,16 @@ flowchart TD
     I9 --> G5{MCP evidence initialized?}
     G5 -- No --> B5[BLOCKED: evidence not initialized]
     G5 -- Yes --> OK[Initialization PASS -> enter PO stage]
+
+        subgraph Stage0_MCP_References
+            SK0[Skills: local-mcp-setup, workflow-preflight-check, spec-tech-detect]
+            T0[Tools/Actions: run_action local_mcp_install/local_mcp_configure/bootstrap_workflow_pack/workflow_preflight_check/spec_tech_detect/planning_behavior_resolve]
+            SV0[Servers: docflow-actions-local, repo-read-local, docs-graph-local, policy-local]
+        end
+
+        I3 --> SK0
+        I3 --> T0
+        I3 --> SV0
+        I6 --> T0
+        I7 --> T0
+        I8 --> T0

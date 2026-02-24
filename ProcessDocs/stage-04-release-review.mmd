@@ -18,3 +18,14 @@ flowchart TD
     D1 -- PASS --> GO[GO]
     D1 -- FAIL --> NOGO[NO-GO]
     D1 -- BLOCKED --> HOLD[BLOCKED]
+
+        subgraph Stage4_MCP_References
+            SK4[Skills: workflow-preflight-check]
+            T4A[Tools/Actions: run_action skill_version_check/template_get, repo-read, docs-graph, policy checks]
+            SV4[Servers: docflow-actions-local, repo-read-local, docs-graph-local, policy-local]
+        end
+
+        R1 --> T4A
+        R1 --> SV4
+        R3 --> T4A
+        R4 --> SV4

@@ -21,3 +21,15 @@ flowchart TD
     E1 --> G4{Architect phase gate complete?}
     G4 -- No --> B4[BLOCKED: incomplete Architect gate]
     G4 -- Yes --> PASS[Architect PASS -> handoff to Developer]
+
+        subgraph Stage2_MCP_References
+            SK2[Skills: spec-tech-detect, workflow-preflight-check]
+            T2A[Tools/Actions: run_action spec_tech_detect/planning_behavior_resolve/template_get, repo-read, docs-graph, policy checks]
+            SV2[Servers: docflow-actions-local, repo-read-local, docs-graph-local, policy-local]
+        end
+
+        A0 --> T2A
+        A0 --> SV2
+        A3 --> T2A
+        A4 --> SV2
+        E1 --> T2A
