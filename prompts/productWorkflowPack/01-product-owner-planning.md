@@ -17,7 +17,18 @@ Define product intent and requirement baseline for a fresh product domain, const
 - `docs/risks-assumptions.md`
 - `docs/repo-topology-decision.md`
 - `docs/openapi-contract-plan.md`
+- `docs/planning-behavior-resolution.md`
 - `docs/handoffs/po/phase-gate.md`
+
+## Planning behavior profile loading (mandatory)
+- Load planning behavior profile via MCP tool access before topology/contract decisions.
+- Allowed profile paths:
+	- `docs/source/02-architecture/planning-behavior-profile.yaml`
+	- `docs/source/DemoArchitectureDocs/planning-behavior-profile.yaml`
+- `docs/planning-behavior-resolution.md` must capture:
+	- profile source path
+	- resolved behavior values used for this run
+	- decision impacts (topology/contracts/dependencies/reviews/integration)
 
 ## Repository topology decision (mandatory)
 Planning must explicitly decide and record implementation topology in `docs/repo-topology-decision.md`.
@@ -61,6 +72,8 @@ If topology is `multi-repo`, planning must also provide:
 If OpenAPI contract plan is missing, phase status must be `BLOCKED`.
 
 If topology decision is missing, phase status must be `BLOCKED`.
+
+If planning behavior profile is not loaded/resolved, phase status must be `BLOCKED`.
 
 ## Requirement quality rules
 - Each requirement must include acceptance criteria in Given/When/Then format.

@@ -30,6 +30,7 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 
 ## Planning rules
 - Plan must be derived from `SPEC_DIR` specs and technical docs/guidance with source citations.
+- Plan must align to `docs/planning-behavior-resolution.md` values derived from MCP-loaded profile.
 - Any unresolved core technology decision must be marked as `TC-*` and block implementation.
 - Mermaid is required for all diagrams.
 - Plan must define concurrent service workstreams and their independent review gates.
@@ -60,6 +61,7 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 
 ## Gate requirement
 Use `templates/phase-gate-template.md`.
+If planning behavior resolution is missing or violated, mark `BLOCKED`.
 If any mandatory `TC-*` decision is unresolved, mark `BLOCKED`.
 If adaptor/service choices lack corporate ADR backing, mark `BLOCKED`.
 If authority fields are missing or `Approval Status` is not `APPROVED`, mark `BLOCKED`.

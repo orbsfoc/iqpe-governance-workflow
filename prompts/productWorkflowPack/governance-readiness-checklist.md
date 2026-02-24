@@ -9,6 +9,7 @@
 ## ADR linkage
 - [ ] Deterministic action coverage check completed (`mcp.action.agent_skill_coverage_check`)
 - [ ] ADR changes reflected in traceability and change-impact artifacts
+- [ ] Planning behavior profile loaded via MCP and resolution recorded in `docs/planning-behavior-resolution.md`
 - [ ] Adaptor/service selections are mapped to approved corporate ADR/technology sources
 - [ ] Repository topology decision ADR is present and approved
 - [ ] Dependency model between split workstreams is documented and gated

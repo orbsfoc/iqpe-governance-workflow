@@ -47,6 +47,14 @@ If initialization fails, set workflow to `BLOCKED`.
 - Steps without satisfied dependencies must not be executed.
 - Dependency model must be documented and versioned in planning/ADR artifacts.
 
+## Planning behavior profile (MCP-configurable, mandatory)
+- Load planning behavior profile via MCP before Product Owner/Architect planning decisions.
+- Preferred profile sources:
+	1) `docs/source/02-architecture/planning-behavior-profile.yaml` (architecture standards repo)
+	2) `docs/source/DemoArchitectureDocs/planning-behavior-profile.yaml` (mirror)
+- Record resolved settings and applied decisions in `docs/planning-behavior-resolution.md`.
+- If profile cannot be loaded or resolution artifact is missing, workflow status must be `BLOCKED`.
+
 ## Global constraints
 - Use only tools available in this workspace/toolchain and repository-contained information unless explicitly authorized.
 - Assume MCP servers are already running; do not restart unless explicitly requested.

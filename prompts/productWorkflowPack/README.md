@@ -95,6 +95,13 @@ ADR best-practice rule:
 - Any exception to service-per-repo must be documented as an ADR decision with rationale, risk, and approval.
 - Code review feedback loops and coding principles (`SOLID`, `DRY`) are mandatory best-practice baseline; see `ADR-BEST-PRACTICE-CODE-QUALITY-AND-REVIEW.md`.
 
+MCP-configurable planning behaviors:
+- Load planning behavior profile via MCP from architecture guidance before planning decisions.
+- Preferred sources:
+	- `docs/source/02-architecture/planning-behavior-profile.yaml`
+	- `docs/source/DemoArchitectureDocs/planning-behavior-profile.yaml`
+- Record effective values in `docs/planning-behavior-resolution.md`.
+
 Corporate architecture governance policy (mandatory):
 - Adaptor/service selections and technical planning choices must be backed by approved corporate ADR/technology guidance.
 - Local-only technical/adaptor decisions without corporate backing must remain `BLOCKED` until approved.
