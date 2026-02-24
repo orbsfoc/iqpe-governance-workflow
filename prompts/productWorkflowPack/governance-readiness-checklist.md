@@ -40,6 +40,8 @@
 - [ ] `mcp.action.implementation_parity_check` returns PASS before phase-03 PASS
 - [ ] `mcp.action.release_blocker_ownership_lint` returns PASS before final release GO
 - [ ] Open planning-vs-skill gaps are tracked in `docs/tooling/skill-capability-gap.md` and resolved or exception-approved
+- [ ] `mcp.action.context_promotion_publish` returns PASS with shared repo roots configured
+- [ ] `docs/tooling/context-promotion-report.json` exists and lists published architecture/catalog targets
 
 ## Process gates
 - [ ] Phase gates include PASS/FAIL/BLOCKED

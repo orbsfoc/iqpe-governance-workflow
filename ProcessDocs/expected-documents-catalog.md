@@ -52,6 +52,7 @@
 - `docs/handoffs/routing-matrix.md`
 - `docs/integration/compose-mode-decision.md`
 - `docs/tooling/skill-capability-gap.md` (required when planning exceeded current skill/action capability)
+- `docs/tooling/context-promotion-report.json`
 
 ## F) Gate/evidence templates expected in use
 

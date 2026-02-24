@@ -148,6 +148,7 @@ Required action baseline includes:
 - `mcp.action.local_mcp_configure`
 - `mcp.action.bootstrap_workflow_pack`
 - `mcp.action.scaffold_service_workspace`
+- `mcp.action.context_promotion_publish`
 - `mcp.action.workflow_preflight_check`
 - `mcp.action.phase_precondition_check`
 - `mcp.action.agent_skill_coverage_check`

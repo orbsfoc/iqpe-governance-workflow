@@ -43,6 +43,8 @@ Perform final readiness review against requirements, architecture plan, diagrams
 
 ## MCP usage evidence (mandatory)
 - Verify phase evidence exists in `docs/tooling/mcp-usage-evidence.md` and follows `.iqpe-workflow/productWorkflowPack/mcp-usage-evidence-template.md`.
+- Run `mcp.action.context_promotion_publish` with configured shared repo roots and require PASS.
+- Verify `docs/tooling/context-promotion-report.json` exists and includes non-empty published targets.
 - If required MCP evidence is missing for any phase, final release decision must be `BLOCKED`.
 
 ## Severity and blocker metadata (mandatory)
@@ -60,6 +62,7 @@ Perform final readiness review against requirements, architecture plan, diagrams
 - Runtime data architecture mismatch without approved deviation: `BLOCKED`
 - Missing handoff acknowledgment evidence for required transitions: `BLOCKED`
 - Open planning-vs-skill capability gap without approved exception: `BLOCKED`
+- Missing or failed context promotion publish report: `BLOCKED`
 - Missing AI usage report when telemetry is available: `BLOCKED`
 - Any adaptor/service selection without corporate ADR backing: `BLOCKED`
 - Missing authority fields or any non-`APPROVED` authority status for required technical/adaptor decisions: `BLOCKED`
