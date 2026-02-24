@@ -26,6 +26,8 @@
 - [ ] VS Code MCP config present at `.vscode/mcp.json`
 - [ ] `mcp.action.bootstrap_workflow_pack` executed with evidence in `docs/tooling/bootstrap-report.md`
 - [ ] MCP usage evidence recorded in `docs/tooling/mcp-usage-evidence.md`
+- [ ] Read-only ownership manifest exists at `docs/tooling/read-only-manifest.json`
+- [ ] Workflow feedback docs are created under `docs/feedback/workflow/` (not `docs/tooling/`, unless approved exception)
 
 ## Process gates
 - [ ] Phase gates include PASS/FAIL/BLOCKED

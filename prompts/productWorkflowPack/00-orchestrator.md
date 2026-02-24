@@ -23,12 +23,17 @@ This process must support any product domain while using repository technical gu
 1) Run `mcp.action.bootstrap_workflow_pack`.
 2) Confirm bootstrap evidence at `docs/tooling/bootstrap-report.md`.
 3) Confirm MCP config present at `.vscode/mcp.json`.
-4) Initialize `docs/tooling/mcp-usage-evidence.md` from `prompts/productWorkflowPack/mcp-usage-evidence-template.md`.
+4) Initialize `docs/tooling/mcp-usage-evidence.md` from `.iqpe-workflow/productWorkflowPack/mcp-usage-evidence-template.md`.
 5) Run `mcp.action.workflow_preflight_check`.
 6) Confirm PASS evidence at `docs/tooling/workflow-preflight.json`.
 7) Run `mcp.action.spec_tech_detect`.
 8) Confirm evidence at `docs/tooling/spec-tech-detect.json`.
 If initialization fails, set workflow to `BLOCKED`.
+
+## Feedback location and ownership guardrails (mandatory)
+- New workflow feedback artifacts must be written under `docs/feedback/workflow/`.
+- Do not create new `*feedback*.md` files in `docs/tooling/` unless an approved owner policy explicitly requires it.
+- Respect ownership metadata in `docs/tooling/read-only-manifest.json`; non-owner edits to owner-only/read-only artifacts must be treated as governance violations.
 
 ## MCP usage evidence (mandatory)
 - For each phase, record MCP action/tool calls and outputs in `docs/tooling/mcp-usage-evidence.md`.
