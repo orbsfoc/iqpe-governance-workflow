@@ -10,6 +10,11 @@
 - [ ] Deterministic action coverage check completed (`mcp.action.agent_skill_coverage_check`)
 - [ ] ADR changes reflected in traceability and change-impact artifacts
 - [ ] Adaptor/service selections are mapped to approved corporate ADR/technology sources
+- [ ] Repository topology decision ADR is present and approved
+- [ ] Dependency model between split workstreams is documented and gated
+- [ ] Service-per-repo best-practice is applied for service-oriented scope, or approved ADR exceptions are recorded
+- [ ] Code quality/review ADR is present and approved (SOLID/DRY + feedback loops)
+- [ ] Code review findings and developer remediation responses are recorded for each implemented workstream
 - [ ] Any unsupported adaptor/service choice is logged as blocked and not approved for implementation
 - [ ] Authority fields present in decision artifacts: `Authoritative Source`, `Approval Owner`, `Approval Status`
 - [ ] Required technical/adaptor decisions have `Approval Status: APPROVED`

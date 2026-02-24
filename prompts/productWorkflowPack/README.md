@@ -84,6 +84,17 @@ Repository boundary policy (mandatory):
 - Integration boundary is MCP servers plus installed skills (project-scoped or personal-scoped).
 - Do not use cross-repo bridge scripts/apps as a normal execution path.
 
+Repository topology and dependency policy (mandatory):
+- Topology (`single-repo` or `multi-repo`) must be explicitly decided in `docs/repo-topology-decision.md`.
+- Execution must be split into workstreams with explicit dependency gates.
+- Integration/orchestration steps can only execute after prerequisite workstream gates pass.
+- If `multi-repo` is selected, developer phase must produce per-repo evidence plus central integration traceability.
+
+ADR best-practice rule:
+- For service-oriented systems, individual services should be in individual repositories as the default best-practice.
+- Any exception to service-per-repo must be documented as an ADR decision with rationale, risk, and approval.
+- Code review feedback loops and coding principles (`SOLID`, `DRY`) are mandatory best-practice baseline; see `ADR-BEST-PRACTICE-CODE-QUALITY-AND-REVIEW.md`.
+
 Corporate architecture governance policy (mandatory):
 - Adaptor/service selections and technical planning choices must be backed by approved corporate ADR/technology guidance.
 - Local-only technical/adaptor decisions without corporate backing must remain `BLOCKED` until approved.

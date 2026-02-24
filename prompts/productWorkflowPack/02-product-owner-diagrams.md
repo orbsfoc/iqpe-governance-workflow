@@ -14,6 +14,12 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 - `docs/backlog.md` prioritized by dependency and risk
 - `docs/technology-constraints.md` with `TC-*` decisions
 - ADR artifacts for technical/adaptor decisions using `adr-decision-template` authority fields
+- ADR artifacts for:
+	- API contract governance (OpenAPI-first)
+	- service repository topology
+	- orchestration dependency and integration sequencing
+	- service/orchestration testing feedback loops
+	- code quality and review policy (SOLID/DRY + mandatory feedback loop)
 - `docs/traceability-matrix.md` covering `REQ -> PLAN -> DIAG`
 - `docs/diagrams/system-context.mmd`
 - `docs/diagrams/sequence-flow.mmd`
@@ -26,6 +32,10 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 - Plan must be derived from `SPEC_DIR` specs and technical docs/guidance with source citations.
 - Any unresolved core technology decision must be marked as `TC-*` and block implementation.
 - Mermaid is required for all diagrams.
+- Plan must define concurrent service workstreams and their independent review gates.
+- Plan must define integration/orchestration steps with explicit dependency gates on prerequisite workstreams.
+- OpenAPI contract must be approved before implementation workstreams begin.
+- Code quality and review ADR baseline must be approved before implementation workstreams begin.
 - If `docs/tooling/spec-tech-detect.json` contains stack decisions, materialize them into `docs/technology-constraints.md` and corresponding ADR entries before declaring unresolved TC constraints.
 - Adaptor/service selections must be backed by approved corporate ADR/technology guidance; local-only choices are not allowed.
 - If corporate backing is missing for an adaptor/service choice, record as blocked decision and set phase status to `BLOCKED`.
@@ -40,6 +50,8 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 - Include stable `DIAG-*` IDs in diagrams or mapping table.
 - Ensure 1:1 coverage from plan tasks to diagram elements.
 - Define diagram drift protocol for future changes.
+- Include orchestration dependency view showing service completion prerequisites.
+- Include test-loop view showing per-workstream test cycle and integration feedback cycle.
 
 ## MCP usage evidence (mandatory)
 - Append phase evidence to `docs/tooling/mcp-usage-evidence.md` using `prompts/productWorkflowPack/mcp-usage-evidence-template.md`.

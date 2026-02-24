@@ -12,6 +12,9 @@ Implement code from approved architect plan and diagrams, preserving traceabilit
 ## Mandatory preconditions
 - Approved `docs/implementation-plan.md`
 - Approved `docs/technology-constraints.md` (`TC-*` resolved)
+- Approved `docs/repo-topology-decision.md`
+- Approved OpenAPI contract baseline and ownership
+- Approved code quality/review ADR baseline (including SOLID/DRY policy)
 - Approved diagram set and mapping table
 - Completed architect phase gate
 - Evidence that requirements were sourced from `SPEC_DIR`
@@ -21,10 +24,36 @@ If any are missing, set status `BLOCKED`.
 ## Implementation requirements
 - Implement against `PLAN-*` items; reference IDs in implementation notes.
 - Preserve architecture layers: UI, API/controller, service/domain, persistence.
+- Apply mandatory coding principles: `SOLID`, `DRY`, and clear module cohesion.
 - Enforce canonical error response schema for non-2xx paths:
    - `code`, `message`, `details`, `correlationId`
 - Add tests with IDs:
    - `TEST-UNIT-*`, `TEST-API-*`, `TEST-UI-*`
+
+## Implementation structure policy (mandatory)
+Use `docs/repo-topology-decision.md` as the execution contract.
+
+For `single-repo`:
+- Keep split workstreams in one repository with clear boundary ownership and traceability.
+
+For `multi-repo`:
+- Scaffold each approved repo/workstream in workspace with explicit paths.
+- Create an integration/orchestrator workspace when dependency coordination requires a central integration surface.
+- Generate per-repo implementation packs and per-repo evidence bundles.
+- Maintain cross-repo traceability links from one central index.
+
+## Delivery pattern (mandatory)
+1) Execute concurrent service workstreams.
+2) Run workstream-level test/review loop:
+   - implement -> unit/API/UI tests -> code review feedback -> defect/refactor fix -> re-test
+3) Promote workstream only when loop passes evidence gate.
+4) Execute integration/orchestration steps only after dependency prerequisites pass.
+5) Run integration feedback loop:
+   - integration tests -> contract compatibility checks -> regression checks against dependent workstreams -> defect routing back to owning workstream
+
+If service-level loops or orchestration loop evidence is missing, status must be `BLOCKED`.
+
+If implementation structure diverges from `docs/repo-topology-decision.md`, status must be `BLOCKED` unless deviation is approved and recorded.
 
 ## Maintenance/change readiness requirements
 - Maintain a repository change log (`CHANGELOG.md` or `docs/change-log.md`) for every implementation update.
@@ -38,6 +67,7 @@ If any are missing, set status `BLOCKED`.
 ## MCP usage evidence (mandatory)
 - Append phase evidence to `docs/tooling/mcp-usage-evidence.md` using `prompts/productWorkflowPack/mcp-usage-evidence-template.md`.
 - Include action/tool IDs used for deterministic checks and their outputs.
+- Record request/token/cost metrics per phase when client telemetry provides them.
 - If MCP evidence is missing, phase status must be `BLOCKED`.
 
 ## Required outputs
@@ -46,8 +76,13 @@ If any are missing, set status `BLOCKED`.
 - Test evidence and command outputs
 - Updated repository change log (`CHANGELOG.md` or `docs/change-log.md`) with key-doc references
 - Updated traceability links (`PLAN -> TEST`)
+- Topology-aligned implementation inventory (`docs/handoffs/dev/implementation-inventory.md`)
+- Service review evidence (`docs/handoffs/dev/service-review-log.md`)
+- Orchestration review evidence (`docs/handoffs/dev/orchestration-review-log.md`)
+- Coding-practice conformance notes (`docs/handoffs/dev/code-quality-review.md`)
+- AI usage rollup (`docs/tooling/ai-usage-report.md`)
 - `docs/handoffs/dev/phase-gate.md`
 
 ## Gate requirement
 Use `templates/phase-gate-template.md`.
-Status cannot be `PASS` unless required tests, error-path evidence, and change-log updates are present.
+Status cannot be `PASS` unless required tests, error-path evidence, change-log updates, and documented reviewer feedback/remediation are present.

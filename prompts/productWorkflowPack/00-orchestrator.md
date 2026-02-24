@@ -37,9 +37,15 @@ If initialization fails, set workflow to `BLOCKED`.
 
 ## Role flow (mandatory)
 1) Product Owner creates intent and requirement set.
-2) Architect creates implementation plan from technical docs/specs and generates diagrams.
-3) Developer implements from approved plan/diagrams.
-4) Release Reviewer validates readiness and traceability.
+2) Architect defines contract baseline, topology ADRs, and dependency model.
+3) Developer executes split implementation workstreams from approved plan/diagrams.
+4) Developer/Architect execute integration/orchestration steps according to dependency gates.
+5) Release Reviewer validates readiness and traceability.
+
+## Dependency orchestration contract (mandatory)
+- Workflow must define split steps/workstreams and explicit dependencies before implementation starts.
+- Steps without satisfied dependencies must not be executed.
+- Dependency model must be documented and versioned in planning/ADR artifacts.
 
 ## Global constraints
 - Use only tools available in this workspace/toolchain and repository-contained information unless explicitly authorized.
@@ -54,8 +60,8 @@ If initialization fails, set workflow to `BLOCKED`.
 ## AI design pattern
 Use a planner-executor-verifier-governor pattern:
 - Planner: Product Owner + Architect outputs with IDs.
-- Executor: Developer implementation against approved IDs.
-- Verifier: Release review with severity policy.
+- Executor: split implementation workstreams against approved IDs.
+- Verifier: workstream-level and integration-level test/review loops before release review.
 - Governor: phase gate enforcement and final PASS/FAIL/BLOCKED.
 
 ## Token minimization policy

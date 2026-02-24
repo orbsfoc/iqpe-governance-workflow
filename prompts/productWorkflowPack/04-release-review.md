@@ -20,6 +20,7 @@ Perform final readiness review against requirements, architecture plan, diagrams
 - Diagram alignment with implemented behavior
 - Error-path verification evidence
 - MCP/tooling validation evidence for fresh collaborator
+- AI usage evidence (`docs/tooling/ai-usage-report.md`) with request/token metrics where available
 - Reproducible run/test commands with expected vs actual outputs
 - Change/maintenance artifacts present (`change-log`, deviations, updated traceability)
 - Changelog/equivalent quality: clear change descriptions and key-doc references are present for implemented scope
@@ -28,6 +29,8 @@ Perform final readiness review against requirements, architecture plan, diagrams
 - Source integrity: requirements and plan decisions reference `SPEC_DIR` paths
 - Corporate governance integrity: adaptor/service selections and technical decisions reference approved corporate ADR/technology sources
 - Authority completeness: ADR/constraints artifacts include `Authoritative Source`, `Approval Owner`, and `Approval Status`
+- Code quality governance integrity: approved ADR exists for coding principles and mandatory code review feedback loops
+- Review evidence integrity: reviewer findings and developer remediation responses are recorded for implemented scope
 
 ## Required outputs
 - `docs/release-review.md`
@@ -42,7 +45,9 @@ Perform final readiness review against requirements, architecture plan, diagrams
 
 ## Decision rules
 - Missing required artifacts or unresolved `TC-*`: `BLOCKED`
+- Missing AI usage report when telemetry is available: `BLOCKED`
 - Any adaptor/service selection without corporate ADR backing: `BLOCKED`
 - Missing authority fields or any non-`APPROVED` authority status for required technical/adaptor decisions: `BLOCKED`
+- Missing code review feedback evidence or missing developer remediation responses: `BLOCKED`
 - Open `Sev-1` or required-path `Sev-2`: `FAIL` and `NO-GO`
 - Otherwise `PASS` with explicit GO/NO-GO rationale and remediation owners
