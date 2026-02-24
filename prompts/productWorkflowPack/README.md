@@ -46,6 +46,10 @@ Minimum required files after copy:
 - `03-developer-implementation.md`
 - `04-release-review.md`
 - `05-maintenance-change-cycle.md`
+- `templates/phase-gate-template.md`
+- `templates/evidence-block-template.md`
+- `templates/provenance-template.md`
+- `templates/change-impact-template.md`
 
 ## Role flow
 1) Product Owner: intent + requirements
@@ -89,6 +93,11 @@ Repository topology and dependency policy (mandatory):
 - Execution must be split into workstreams with explicit dependency gates.
 - Integration/orchestration steps can only execute after prerequisite workstream gates pass.
 - If `multi-repo` is selected, developer phase must produce per-repo evidence plus central integration traceability.
+
+Draft/feedback tree policy (mandatory):
+- `docs/feedback/**` is feedback-only.
+- Non-owner draft deliverables must be written under `docs/drafts/**`.
+- Draft structures should mirror canonical relative paths to support deterministic owner promotion.
 
 ADR best-practice rule:
 - For service-oriented systems, individual services should be in individual repositories as the default best-practice.
@@ -135,6 +144,7 @@ Required action baseline includes:
 - `mcp.action.local_mcp_configure`
 - `mcp.action.bootstrap_workflow_pack`
 - `mcp.action.workflow_preflight_check`
+- `mcp.action.phase_precondition_check`
 - `mcp.action.agent_skill_coverage_check`
 
 AI usage reporting template:
@@ -143,6 +153,13 @@ AI usage reporting template:
 Planning storage templates:
 - `plans-index-template.md` (copy to `docs/plans/index.md`)
 - `story-plan-template.md` (copy to `docs/plans/PLAN-<id>-<slug>.md`)
+
+Draft/promotion and governance templates:
+- `draft-promotion-checklist-template.md`
+- `adr-approval-transition-template.md`
+- `diagrams-drift-protocol-template.md`
+- `test-execution-evidence-template.md`
+- `severity-classification-template.md`
 
 ## AI design patterns
 - Use planner-executor-verifier-governor pattern.

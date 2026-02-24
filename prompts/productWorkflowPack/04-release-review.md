@@ -43,6 +43,15 @@ Perform final readiness review against requirements, architecture plan, diagrams
 - Verify phase evidence exists in `docs/tooling/mcp-usage-evidence.md` and follows `.iqpe-workflow/productWorkflowPack/mcp-usage-evidence-template.md`.
 - If required MCP evidence is missing for any phase, final release decision must be `BLOCKED`.
 
+## Severity and blocker metadata (mandatory)
+- Classify findings using `severity-classification-template.md`.
+- Every NO-GO/BLOCKED blocker must include:
+	- `blocker_id`
+	- `owner_role`
+	- `owner_name`
+	- `eta_utc`
+	- `unblock_criteria`
+
 ## Decision rules
 - Missing required artifacts or unresolved `TC-*`: `BLOCKED`
 - Missing AI usage report when telemetry is available: `BLOCKED`
@@ -51,3 +60,5 @@ Perform final readiness review against requirements, architecture plan, diagrams
 - Missing code review feedback evidence or missing developer remediation responses: `BLOCKED`
 - Open `Sev-1` or required-path `Sev-2`: `FAIL` and `NO-GO`
 - Otherwise `PASS` with explicit GO/NO-GO rationale and remediation owners
+
+For draft/non-owner runs, use `draft-promotion-checklist-template.md` before any authoritative canonical release decision is issued.

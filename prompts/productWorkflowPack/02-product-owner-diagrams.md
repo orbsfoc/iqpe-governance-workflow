@@ -28,12 +28,15 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 - `docs/diagrams/components.mmd`
 - `docs/diagrams/error-flow.mmd`
 - `docs/diagrams/mapping-table.md`
+- `docs/diagrams/drift-protocol.md`
+- `docs/tech-radar.md` (incremental update baseline starting in phase 02)
 - `docs/handoffs/architect/phase-gate.md`
 
 ## Planning rules
 - Plan must be derived from `SPEC_DIR` specs and technical docs/guidance with source citations.
 - Plan must align to `docs/planning-behavior-resolution.md` values derived from MCP-loaded profile.
 - Plan storage layout and naming must align to resolved profile controls (`plan_storage_mode`, `plan_directory`, `plan_index_file`, `plan_story_file_pattern`).
+- For non-owner runs, draft outputs must be created under `docs/drafts/workflow/phase-02-architect-handoff/` and mirror canonical relative paths.
 - Any unresolved core technology decision must be marked as `TC-*` and block implementation.
 - Mermaid is required for all diagrams.
 - Plan must define concurrent service workstreams and their independent review gates.
@@ -49,11 +52,13 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 	- `Approval Status`
 - Auto-approval rule: if a decision is directly backed by approved corporate ADR/technology sources, set `Approval Status: APPROVED` and continue.
 - If backing is absent or ambiguous, set `Approval Status: PROPOSED` and keep dependent work `BLOCKED`.
+- Use `adr-approval-transition-template.md` when transitioning draft ADRs from `PROPOSED` to owner-approved `APPROVED`.
 
 ## Diagram rules
 - Include stable `DIAG-*` IDs in diagrams or mapping table.
 - Ensure 1:1 coverage from plan tasks to diagram elements.
 - Define diagram drift protocol for future changes.
+- Use `diagrams-drift-protocol-template.md` for drift protocol structure.
 - Include orchestration dependency view showing service completion prerequisites.
 - Include test-loop view showing per-workstream test cycle and integration feedback cycle.
 
@@ -68,3 +73,4 @@ If planning behavior resolution is missing or violated, mark `BLOCKED`.
 If any mandatory `TC-*` decision is unresolved, mark `BLOCKED`.
 If adaptor/service choices lack corporate ADR backing, mark `BLOCKED`.
 If authority fields are missing or `Approval Status` is not `APPROVED`, mark `BLOCKED`.
+If draft outputs are not accompanied by promotion checklist evidence (`draft-promotion-checklist-template.md`), keep status `BLOCKED`.

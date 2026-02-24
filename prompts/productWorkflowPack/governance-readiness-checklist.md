@@ -28,6 +28,8 @@
 - [ ] MCP usage evidence recorded in `docs/tooling/mcp-usage-evidence.md`
 - [ ] Read-only ownership manifest exists at `docs/tooling/read-only-manifest.json`
 - [ ] Workflow feedback docs are created under `docs/feedback/workflow/` (not `docs/tooling/`, unless approved exception)
+- [ ] Non-owner draft deliverables are created under `docs/drafts/workflow/` (not under `docs/feedback/**`)
+- [ ] `mcp.action.phase_precondition_check` is PASS for current phase before phase authoring starts
 
 ## Process gates
 - [ ] Phase gates include PASS/FAIL/BLOCKED

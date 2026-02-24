@@ -28,12 +28,19 @@ This process must support any product domain while using repository technical gu
 6) Confirm PASS evidence at `docs/tooling/workflow-preflight.json`.
 7) Run `mcp.action.spec_tech_detect`.
 8) Confirm evidence at `docs/tooling/spec-tech-detect.json`.
+9) Run `mcp.action.phase_precondition_check` with `phase=01` before phase-01 execution.
 If initialization fails, set workflow to `BLOCKED`.
 
 ## Feedback location and ownership guardrails (mandatory)
 - New workflow feedback artifacts must be written under `docs/feedback/workflow/`.
 - Do not create new `*feedback*.md` files in `docs/tooling/` unless an approved owner policy explicitly requires it.
 - Respect ownership metadata in `docs/tooling/read-only-manifest.json`; non-owner edits to owner-only/read-only artifacts must be treated as governance violations.
+- `docs/feedback/**` is feedback-only; draft deliverables must be created under `docs/drafts/**`.
+
+## Non-owner execution contract (mandatory)
+- If actor is not authorized to write canonical phase outputs, create phase draft handoff packs under `docs/drafts/workflow/phase-XX-owner-handoff/`.
+- Draft structures must mirror canonical relative output paths to simplify promotion (`docs/drafts/...` -> `docs/...`).
+- Phase gates remain `BLOCKED` until owner promotion and sign-off are completed.
 
 ## MCP usage evidence (mandatory)
 - For each phase, record MCP action/tool calls and outputs in `docs/tooling/mcp-usage-evidence.md`.

@@ -23,6 +23,8 @@ Implement code from approved architect plan and diagrams, preserving traceabilit
 
 If any are missing, set status `BLOCKED`.
 
+Before drafting or implementation, run `mcp.action.phase_precondition_check` with `phase=03`; if result is not PASS, stop and keep status `BLOCKED`.
+
 ## Implementation requirements
 - Implement against `PLAN-*` items; reference IDs in implementation notes.
 - For each implemented `PLAN-*`, reference the owning plan file path from `docs/plans/index.md`.
@@ -69,6 +71,8 @@ If implementation structure diverges from `docs/repo-topology-decision.md`, stat
 
 ## MCP usage evidence (mandatory)
 - Append phase evidence to `docs/tooling/mcp-usage-evidence.md` using `.iqpe-workflow/productWorkflowPack/mcp-usage-evidence-template.md`.
+- Include `execution_status` for each evidence block: `draft-only`, `executed`, or `verified`.
+- For draft-only/non-owner runs, place AI telemetry draft under `docs/drafts/workflow/phase-03-developer-handoff/tooling/ai-usage-report.draft.md`.
 - Include action/tool IDs used for deterministic checks and their outputs.
 - Record request/token/cost metrics per phase when client telemetry provides them.
 - If MCP evidence is missing, phase status must be `BLOCKED`.
@@ -77,6 +81,7 @@ If implementation structure diverges from `docs/repo-topology-decision.md`, stat
 - Implementation artifacts
 - Run/build/test instructions
 - Test evidence and command outputs
+- Test evidence must use `test-execution-evidence-template.md` format (`command`, `expected`, `actual`, `exit_code`, `artifact_path`).
 - Updated repository change log (`CHANGELOG.md` or `docs/change-log.md`) with key-doc references
 - Updated traceability links (`PLAN -> TEST`)
 - Updated plan storage traceability (`REQ -> PLAN -> plan-file-path`)
@@ -90,3 +95,4 @@ If implementation structure diverges from `docs/repo-topology-decision.md`, stat
 ## Gate requirement
 Use `templates/phase-gate-template.md`.
 Status cannot be `PASS` unless required tests, error-path evidence, change-log updates, and documented reviewer feedback/remediation are present.
+Status cannot be `PASS` when `execution_status` remains `draft-only`.
