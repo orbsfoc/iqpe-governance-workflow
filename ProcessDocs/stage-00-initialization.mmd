@@ -1,0 +1,26 @@
+flowchart TD
+    S0[Start Run] --> I1[Input SPEC_DIR + target_root]
+    I1 --> I2[Install workflow pack + required skills]
+    I2 --> I3[mcp.action.local_mcp_install]
+    I3 --> I4[mcp.action.local_mcp_configure]
+    I4 --> I5[mcp.action.bootstrap_workflow_pack]
+
+    I5 --> G1{bootstrap-report exists?}
+    G1 -- No --> B1[BLOCKED: missing bootstrap-report]
+    G1 -- Yes --> I6[mcp.action.workflow_preflight_check]
+
+    I6 --> G2{workflow-preflight status PASS?}
+    G2 -- No --> B2[BLOCKED: preflight failed]
+    G2 -- Yes --> I7[mcp.action.spec_tech_detect]
+
+    I7 --> G3{spec-tech-detect exists?}
+    G3 -- No --> B3[BLOCKED: missing spec-tech-detect]
+    G3 -- Yes --> I8[mcp.action.planning_behavior_resolve]
+
+    I8 --> G4{planning-behavior-resolution exists?}
+    G4 -- No --> B4[BLOCKED: planning behavior unresolved]
+    G4 -- Yes --> I9[Initialize mcp-usage-evidence.md]
+
+    I9 --> G5{MCP evidence initialized?}
+    G5 -- No --> B5[BLOCKED: evidence not initialized]
+    G5 -- Yes --> OK[Initialization PASS -> enter PO stage]

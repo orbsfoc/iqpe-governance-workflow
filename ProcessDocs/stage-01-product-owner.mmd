@@ -1,0 +1,23 @@
+flowchart TD
+    P0[Inputs: SPEC_DIR + planning-behavior-resolution + ADR constraints] --> P1[Read specs and derive intent]
+    P1 --> P2[Write product-intent.md]
+    P2 --> P3[Write requirements.md with REQ-* + acceptance criteria]
+    P3 --> P4[Write non-goals + risks-assumptions]
+
+    P4 --> P5[Decide topology in repo-topology-decision.md]
+    P5 --> P6[Write openapi-contract-plan.md]
+    P6 --> P7[Resolve plan storage controls from profile]
+
+    P7 --> P8[Create docs/plans/index.md mapping REQ -> PLAN -> file]
+    P8 --> P9[Create per-story plan files docs/plans/PLAN-*-<slug>.md]
+
+    P9 --> G1{All required PO artifacts present?}
+    G1 -- No --> B1[BLOCKED: missing PO artifacts]
+    G1 -- Yes --> G2{Citations from SPEC_DIR and governance present?}
+
+    G2 -- No --> B2[BLOCKED: missing provenance]
+    G2 -- Yes --> E1[Append MCP evidence for PO stage]
+
+    E1 --> G3{PO phase gate complete?}
+    G3 -- No --> B3[BLOCKED: incomplete PO gate]
+    G3 -- Yes --> PASS[PO PASS -> handoff to Architect]

@@ -1,0 +1,27 @@
+flowchart TD
+    D0[Inputs: approved PLAN/TC/DIAG + topology contract] --> D1[Select next PLAN-* from docs/plans/index.md]
+    D1 --> D2[Implement changes for owning story plan file]
+    D2 --> D3[Run tests: TEST-UNIT/API/UI]
+
+    D3 --> T1{Tests pass?}
+    T1 -- No --> F1[Log defects + update traceability + rework]
+    F1 --> D2
+
+    T1 -- Yes --> D4[Code review feedback loop]
+    D4 --> R1{Findings resolved?}
+    R1 -- No --> D5[Apply remediation + refactor]
+    D5 --> D3
+
+    R1 -- Yes --> D6[Update changelog/deviations/evidence]
+    D6 --> G1{Workstream gate PASS?}
+    G1 -- No --> B1[BLOCKED: missing evidence/artifacts]
+
+    G1 -- Yes --> D7[Run integration + contract compatibility checks]
+    D7 --> I1{Integration passes dependency gates?}
+    I1 -- No --> F2[Route defects to owning workstream]
+    F2 --> D2
+
+    I1 -- Yes --> D8[Update AI usage + MCP usage evidence]
+    D8 --> G2{Developer phase gate complete?}
+    G2 -- No --> B2[BLOCKED: incomplete Dev gate]
+    G2 -- Yes --> PASS[Developer PASS -> handoff to Release]

@@ -1,0 +1,20 @@
+flowchart TD
+    R0[Inputs: all phase gates + evidence + traceability matrix] --> R1[Run readiness review checklist]
+    R1 --> R2[Verify REQ -> PLAN -> DIAG -> TEST/DEF completeness]
+    R2 --> R3[Verify MCP evidence + AI usage report availability]
+    R3 --> R4[Verify authority-backed ADR/policy compliance]
+
+    R4 --> G1{Any missing required artifacts?}
+    G1 -- Yes --> B1[BLOCKED: missing artifacts/evidence]
+    G1 -- No --> G2{Any unresolved Sev-1/Sev-2 findings?}
+
+    G2 -- Yes --> FAIL[FAIL: release not ready]
+    G2 -- No --> G3{All governance constraints satisfied?}
+
+    G3 -- No --> B2[BLOCKED: governance constraints unresolved]
+    G3 -- Yes --> R5[Publish release-review + final-decision docs]
+
+    R5 --> D1{Decision}
+    D1 -- PASS --> GO[GO]
+    D1 -- FAIL --> NOGO[NO-GO]
+    D1 -- BLOCKED --> HOLD[BLOCKED]

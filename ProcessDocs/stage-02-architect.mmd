@@ -1,0 +1,23 @@
+flowchart TD
+    A0[Inputs: REQ-*, topology decision, planning profile, spec-tech-detect] --> A1[Draft implementation-plan.md with PLAN-* links]
+    A1 --> A2[Build backlog prioritized by dependency/risk]
+    A2 --> A3[Define technology-constraints.md with TC-*]
+    A3 --> A4[Author ADRs for contracts/topology/orchestration/testing/review policy]
+
+    A4 --> A5[Create diagrams: system-context, components, sequence-flow, error-flow]
+    A5 --> A6[Create traceability-matrix REQ -> PLAN -> DIAG]
+    A6 --> A7[Verify plan storage layout matches profile controls]
+
+    A7 --> G1{Any unresolved mandatory TC-*?}
+    G1 -- Yes --> B1[BLOCKED: unresolved technology constraints]
+    G1 -- No --> G2{Adaptor/service decisions have approved authority fields?}
+
+    G2 -- No --> B2[BLOCKED: missing/PROPOSED approvals]
+    G2 -- Yes --> G3{Dependency graph + orchestration gates explicit?}
+
+    G3 -- No --> B3[BLOCKED: incomplete dependency model]
+    G3 -- Yes --> E1[Append MCP evidence for Architect stage]
+
+    E1 --> G4{Architect phase gate complete?}
+    G4 -- No --> B4[BLOCKED: incomplete Architect gate]
+    G4 -- Yes --> PASS[Architect PASS -> handoff to Developer]
