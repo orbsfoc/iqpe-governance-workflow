@@ -140,6 +140,10 @@ Required action baseline includes:
 AI usage reporting template:
 - `ai-usage-report-template.md` (copy to `docs/tooling/ai-usage-report.md` and fill planned vs actual metrics)
 
+Planning storage templates:
+- `plans-index-template.md` (copy to `docs/plans/index.md`)
+- `story-plan-template.md` (copy to `docs/plans/PLAN-<id>-<slug>.md`)
+
 ## AI design patterns
 - Use planner-executor-verifier-governor pattern.
 - Prefer deterministic tool actions over open-ended LLM generation.
