@@ -1,0 +1,29 @@
+flowchart TD
+    P0[Approved PLAN-* + topology + constraints] --> W1[Implement workstream]
+    W1 --> T1[Run unit/API/UI tests]
+    T1 --> D1{Tests pass?}
+    D1 -- No --> F1[Log defects + update evidence]
+    F1 --> W1
+
+    D1 -- Yes --> R1[Code review feedback loop]
+    R1 --> D2{Findings resolved?}
+    D2 -- No --> M1[Developer remediation]
+    M1 --> T1
+
+    D2 -- Yes --> G1{Workstream gate PASS?}
+    G1 -- No --> B1[BLOCKED until artifacts/evidence complete]
+    B1 --> W1
+
+    G1 -- Yes --> I1[Integration/orchestration candidate]
+
+    I1 --> C1[Contract compatibility checks]
+    C1 --> I2[Integration/regression checks]
+    I2 --> D3{Integration checks pass?}
+    D3 -- No --> F2[Route defect to owning workstream]
+    F2 --> W1
+
+    D3 -- Yes --> RG[Release review gate]
+    RG --> D4{Final decision}
+    D4 -- PASS --> DONE[GO]
+    D4 -- FAIL --> NOGO[NO-GO]
+    D4 -- BLOCKED --> HOLD[BLOCKED]

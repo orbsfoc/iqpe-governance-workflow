@@ -1,0 +1,58 @@
+flowchart TD
+    SPEC[SPEC_DIR
+Product Specs] --> ORCH[Orchestrator
+00-orchestrator.md]
+    ARCHSRC[Planning Behavior Profiles
+architecture standards / demo mirror / local fallback] --> ORCH
+    ADR[Corporate ADR / Tech Guidance] --> ORCH
+
+    ORCH --> A1[mcp.action.local_mcp_install]
+    ORCH --> A2[mcp.action.local_mcp_configure]
+    ORCH --> A3[mcp.action.bootstrap_workflow_pack]
+    ORCH --> A4[mcp.action.workflow_preflight_check]
+    ORCH --> A5[mcp.action.spec_tech_detect]
+    ORCH --> A6[mcp.action.planning_behavior_resolve]
+
+    subgraph MCP Servers
+      S1[repo-read-local]
+      S2[docflow-actions-local]
+      S3[docs-graph-local]
+      S4[policy-local]
+    end
+
+    A1 --> S2
+    A2 --> S2
+    A3 --> S2
+    A4 --> S2
+    A5 --> S2
+    A6 --> S2
+
+    ORCH --> S1
+    ORCH --> S3
+    ORCH --> S4
+
+    subgraph Skills and Registries
+      SK[.github/skills/*]
+      ACT[Tooling/agent-tools/mcp-actions.yaml]
+      TMP[Tooling/agent-tools/template-registry.yaml]
+      VER[Tooling/agent-skills/skill-versions.yaml]
+    end
+
+    S2 --> SK
+    S2 --> ACT
+    S2 --> TMP
+    S2 --> VER
+
+    subgraph Generated Evidence
+      E1[docs/tooling/bootstrap-report.md]
+      E2[docs/tooling/workflow-preflight.json]
+      E3[docs/tooling/spec-tech-detect.json]
+      E4[docs/planning-behavior-resolution.md]
+      E5[docs/tooling/mcp-usage-evidence.md]
+    end
+
+    A3 --> E1
+    A4 --> E2
+    A5 --> E3
+    A6 --> E4
+    ORCH --> E5
