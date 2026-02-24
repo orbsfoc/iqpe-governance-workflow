@@ -53,6 +53,7 @@ Allowed topology values:
 
 Decision artifact must include:
 - Chosen topology and rationale
+- Expected profile direction vs selected topology (explicit comparison)
 - Workstream/component boundaries
 - Workspace/scaffolding plan
 - Whether a separate integration/orchestrator workspace is required
@@ -63,6 +64,7 @@ Topology choice rule:
 - If dependency isolation, ownership, or release cadence requires separation, choose `multi-repo`; otherwise `single-repo` is acceptable.
 - For service-oriented architectures, best-practice default is **one service per repository**.
 - Any deviation from service-per-repo best-practice must be documented as an ADR exception with rationale and approval.
+- If mandatory topology controls are unresolved in planning behavior profile, treat topology decision as `BLOCKED` unless owner-approved exception is recorded.
 
 If topology is `multi-repo`, planning must also provide:
 - repo list and ownership map

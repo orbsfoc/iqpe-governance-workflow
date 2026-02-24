@@ -116,6 +116,10 @@ Corporate architecture governance policy (mandatory):
 - Local-only technical/adaptor decisions without corporate backing must remain `BLOCKED` until approved.
 - Decision artifacts must include authority fields: `Authoritative Source`, `Approval Owner`, `Approval Status`.
 
+Source precedence labeling:
+- Label rules/examples as one of: `authoritative`, `example`, `informational`.
+- If example text conflicts with approved baseline decisions, approved baseline (authoritative source) must win.
+
 Approved execution when one client cannot invoke `run_action`:
 - If MCP server is healthy but this client/session cannot invoke `run_action`, execute required actions from another MCP-capable client connected to the same servers/skills.
 - Product teams may also use the installed `local-mcp-setup` skill self-service command to generate bootstrap/preflight artifacts directly.

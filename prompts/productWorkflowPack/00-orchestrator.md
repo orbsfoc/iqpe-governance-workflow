@@ -48,11 +48,11 @@ If initialization fails, set workflow to `BLOCKED`.
 - If MCP was not used for required checks, status must be `BLOCKED`.
 
 ## Role flow (mandatory)
-1) Product Owner creates intent and requirement set.
-2) Architect defines contract baseline, topology ADRs, and dependency model.
-3) Developer executes split implementation workstreams from approved plan/diagrams.
-4) Developer/Architect execute integration/orchestration steps according to dependency gates.
-5) Release Reviewer validates readiness and traceability.
+1) Run `mcp.action.phase_precondition_check` with `phase=01`, then Product Owner creates intent and requirement set.
+2) Run `mcp.action.phase_precondition_check` with `phase=02`, then Architect defines contract baseline, topology ADRs, and dependency model.
+3) Run `mcp.action.phase_precondition_check` with `phase=03`, then Developer executes split implementation workstreams from approved plan/diagrams.
+4) Run `mcp.action.phase_precondition_check` with `phase=04`, then Developer/Architect execute integration/orchestration steps according to dependency gates.
+5) Run `mcp.action.phase_precondition_check` with `phase=05`, then Release Reviewer validates readiness and traceability.
 
 ## Dependency orchestration contract (mandatory)
 - Workflow must define split steps/workstreams and explicit dependencies before implementation starts.

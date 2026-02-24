@@ -45,6 +45,7 @@ Set `SPEC_DIR` to the provided product spec folder for this run.
 Before setting TC-003/TC-004 to unresolved:
 - Run `mcp.action.spec_tech_detect` and review `docs/tooling/spec-tech-detect.json`.
 - If specs indicate stack choices (for example `golang` backend, `react` frontend, `postgres` persistent engine, `flyway` migration tool), capture them into technology constraints and ADR artifacts.
+- These stack examples are informational only; approved corporate baseline artifacts are authoritative when conflicts exist.
 
 Validate using MCP/server-managed checks and evidence policy.
 
