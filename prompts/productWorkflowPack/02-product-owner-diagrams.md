@@ -11,6 +11,8 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 
 ## Required outputs
 - `docs/implementation-plan.md` with `PLAN-*` IDs linked to `REQ-*`
+- `docs/plans/index.md` with `REQ-*` to `PLAN-*` to plan-file mapping
+- `docs/plans/PLAN-*.md` plan files (when per-story storage is configured)
 - `docs/backlog.md` prioritized by dependency and risk
 - `docs/technology-constraints.md` with `TC-*` decisions
 - ADR artifacts for technical/adaptor decisions using `adr-decision-template` authority fields
@@ -31,6 +33,7 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 ## Planning rules
 - Plan must be derived from `SPEC_DIR` specs and technical docs/guidance with source citations.
 - Plan must align to `docs/planning-behavior-resolution.md` values derived from MCP-loaded profile.
+- Plan storage layout and naming must align to resolved profile controls (`plan_storage_mode`, `plan_directory`, `plan_index_file`, `plan_story_file_pattern`).
 - Any unresolved core technology decision must be marked as `TC-*` and block implementation.
 - Mermaid is required for all diagrams.
 - Plan must define concurrent service workstreams and their independent review gates.

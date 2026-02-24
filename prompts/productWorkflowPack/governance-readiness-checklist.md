@@ -10,6 +10,8 @@
 - [ ] Deterministic action coverage check completed (`mcp.action.agent_skill_coverage_check`)
 - [ ] ADR changes reflected in traceability and change-impact artifacts
 - [ ] Planning behavior profile loaded via MCP and resolution recorded in `docs/planning-behavior-resolution.md`
+- [ ] Plan storage controls resolved and applied (`plan_storage_mode`, `plan_directory`, `plan_index_file`, `plan_story_file_pattern`)
+- [ ] Plan artifacts are stored in configured planning directory with per-story traceability mapping
 - [ ] Adaptor/service selections are mapped to approved corporate ADR/technology sources
 - [ ] Repository topology decision ADR is present and approved
 - [ ] Dependency model between split workstreams is documented and gated

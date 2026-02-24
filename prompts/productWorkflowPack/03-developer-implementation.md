@@ -11,6 +11,8 @@ Implement code from approved architect plan and diagrams, preserving traceabilit
 
 ## Mandatory preconditions
 - Approved `docs/implementation-plan.md`
+- Approved `docs/plans/index.md`
+- Approved per-story plan artifacts under configured plan directory (when `plan_storage_mode=per-story-files`)
 - Approved `docs/technology-constraints.md` (`TC-*` resolved)
 - Approved `docs/repo-topology-decision.md`
 - Approved OpenAPI contract baseline and ownership
@@ -23,6 +25,7 @@ If any are missing, set status `BLOCKED`.
 
 ## Implementation requirements
 - Implement against `PLAN-*` items; reference IDs in implementation notes.
+- For each implemented `PLAN-*`, reference the owning plan file path from `docs/plans/index.md`.
 - Preserve architecture layers: UI, API/controller, service/domain, persistence.
 - Apply mandatory coding principles: `SOLID`, `DRY`, and clear module cohesion.
 - Enforce canonical error response schema for non-2xx paths:
@@ -76,6 +79,7 @@ If implementation structure diverges from `docs/repo-topology-decision.md`, stat
 - Test evidence and command outputs
 - Updated repository change log (`CHANGELOG.md` or `docs/change-log.md`) with key-doc references
 - Updated traceability links (`PLAN -> TEST`)
+- Updated plan storage traceability (`REQ -> PLAN -> plan-file-path`)
 - Topology-aligned implementation inventory (`docs/handoffs/dev/implementation-inventory.md`)
 - Service review evidence (`docs/handoffs/dev/service-review-log.md`)
 - Orchestration review evidence (`docs/handoffs/dev/orchestration-review-log.md`)

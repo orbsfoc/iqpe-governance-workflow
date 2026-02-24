@@ -17,6 +17,8 @@ Define product intent and requirement baseline for a fresh product domain, const
 - `docs/risks-assumptions.md`
 - `docs/repo-topology-decision.md`
 - `docs/openapi-contract-plan.md`
+- `docs/plans/index.md`
+- `docs/plans/PLAN-*.md` (when per-story storage is configured)
 - `docs/planning-behavior-resolution.md`
 - `docs/handoffs/po/phase-gate.md`
 
@@ -29,7 +31,18 @@ Define product intent and requirement baseline for a fresh product domain, const
 - `docs/planning-behavior-resolution.md` must capture:
 	- profile source path
 	- resolved behavior values used for this run
-	- decision impacts (topology/contracts/dependencies/reviews/integration)
+	- decision impacts (topology/contracts/plan-storage/dependencies/reviews/integration)
+
+## Plan storage convention (mandatory)
+- Plan storage rules are resolved from the planning behavior profile.
+- Minimum controls to resolve and apply:
+	- `plan_storage_mode`
+	- `plan_directory`
+	- `plan_index_file`
+	- `plan_story_file_pattern`
+	- `plan_traceability_required`
+- If `plan_storage_mode=per-story-files`, planning must produce per-story plan files under the configured directory using configured naming pattern.
+- `plan_index_file` must map each `REQ-*` to one or more `PLAN-*` IDs and corresponding plan file paths.
 
 ## Repository topology decision (mandatory)
 Planning must explicitly decide and record implementation topology in `docs/repo-topology-decision.md`.
@@ -75,6 +88,8 @@ If OpenAPI contract plan is missing, phase status must be `BLOCKED`.
 If topology decision is missing, phase status must be `BLOCKED`.
 
 If planning behavior profile is not loaded/resolved, phase status must be `BLOCKED`.
+
+If required plan storage controls are missing or violated, phase status must be `BLOCKED`.
 
 ## Requirement quality rules
 - Each requirement must include acceptance criteria in Given/When/Then format.
