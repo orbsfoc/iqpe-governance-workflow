@@ -36,7 +36,7 @@ Run this workflow when any of the following change:
 - Use deterministic checks and concise templates.
 
 ## MCP usage evidence (mandatory)
-- Append cycle evidence to `docs/tooling/mcp-usage-evidence.md` using `prompts/productWorkflowPack/mcp-usage-evidence-template.md`.
+- Append cycle evidence to `docs/tooling/mcp-usage-evidence.md` using `.iqpe-workflow/productWorkflowPack/mcp-usage-evidence-template.md`.
 - Include action/tool IDs executed for impacted scope and output artifacts.
 - If MCP evidence is missing, cycle status must be `BLOCKED`.
 

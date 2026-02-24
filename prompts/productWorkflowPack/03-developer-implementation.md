@@ -68,7 +68,7 @@ If implementation structure diverges from `docs/repo-topology-decision.md`, stat
 - Update traceability matrix for new/changed requirements.
 
 ## MCP usage evidence (mandatory)
-- Append phase evidence to `docs/tooling/mcp-usage-evidence.md` using `prompts/productWorkflowPack/mcp-usage-evidence-template.md`.
+- Append phase evidence to `docs/tooling/mcp-usage-evidence.md` using `.iqpe-workflow/productWorkflowPack/mcp-usage-evidence-template.md`.
 - Include action/tool IDs used for deterministic checks and their outputs.
 - Record request/token/cost metrics per phase when client telemetry provides them.
 - If MCP evidence is missing, phase status must be `BLOCKED`.

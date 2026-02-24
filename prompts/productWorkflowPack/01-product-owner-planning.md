@@ -108,7 +108,7 @@ If conflicts exist, record a decision and rationale in risks/assumptions.
 - Record checks using evidence blocks.
 
 ## MCP usage evidence (mandatory)
-- Append phase evidence to `docs/tooling/mcp-usage-evidence.md` using `prompts/productWorkflowPack/mcp-usage-evidence-template.md`.
+- Append phase evidence to `docs/tooling/mcp-usage-evidence.md` using `.iqpe-workflow/productWorkflowPack/mcp-usage-evidence-template.md`.
 - Include action/tool IDs invoked, input summaries, output summaries, and artifact paths.
 - If MCP evidence is missing, phase status must be `BLOCKED`.
 

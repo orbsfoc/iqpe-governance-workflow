@@ -58,7 +58,7 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 - Include test-loop view showing per-workstream test cycle and integration feedback cycle.
 
 ## MCP usage evidence (mandatory)
-- Append phase evidence to `docs/tooling/mcp-usage-evidence.md` using `prompts/productWorkflowPack/mcp-usage-evidence-template.md`.
+- Append phase evidence to `docs/tooling/mcp-usage-evidence.md` using `.iqpe-workflow/productWorkflowPack/mcp-usage-evidence-template.md`.
 - Include `mcp.action.spec_tech_detect` evidence before marking any core `TC-*` as unresolved.
 - If MCP evidence is missing, phase status must be `BLOCKED`.
 

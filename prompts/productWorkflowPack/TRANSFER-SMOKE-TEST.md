@@ -13,7 +13,7 @@ Validate that the workflow pack runs in a fresh demo repo with MCP-first enforce
 2) Confirm `docs/tooling/bootstrap-report.md` exists.
 3) Run `mcp.action.workflow_preflight_check` with `target_root=<absolute target repo path>` and `spec_dir=<spec path>`.
 4) Confirm PASS in `docs/tooling/workflow-preflight.json`.
-5) Create `docs/tooling/mcp-usage-evidence.md` from `mcp-usage-evidence-template.md`.
+5) Create `docs/tooling/mcp-usage-evidence.md` from `.iqpe-workflow/productWorkflowPack/mcp-usage-evidence-template.md`.
 6) Run role flow from `00` through `04` (and `05` for change cycle).
 
 ## Pass criteria

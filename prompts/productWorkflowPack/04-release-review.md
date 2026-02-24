@@ -40,7 +40,7 @@ Perform final readiness review against requirements, architecture plan, diagrams
 - `docs/handoffs/release/tech-radar-summary.md`
 
 ## MCP usage evidence (mandatory)
-- Verify phase evidence exists in `docs/tooling/mcp-usage-evidence.md` and follows `prompts/productWorkflowPack/mcp-usage-evidence-template.md`.
+- Verify phase evidence exists in `docs/tooling/mcp-usage-evidence.md` and follows `.iqpe-workflow/productWorkflowPack/mcp-usage-evidence-template.md`.
 - If required MCP evidence is missing for any phase, final release decision must be `BLOCKED`.
 
 ## Decision rules
