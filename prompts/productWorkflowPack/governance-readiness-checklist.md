@@ -30,6 +30,7 @@
 - [ ] `mcp.action.bootstrap_workflow_pack` executed with evidence in `docs/tooling/bootstrap-report.md`
 - [ ] `mcp.action.scaffold_service_workspace` executed and reported PASS
 - [ ] `repos/` workspace exists with planned repositories and integration workspace artifacts aligned to topology decision
+- [ ] No service/integration repositories were auto-created before planning signoff (`docs/plans/planning-signoff.md` approval)
 - [ ] Naming convention ADR exists at `docs/adr/ADR-0001-repo-naming-conventions.md`
 - [ ] Handoff routing matrix exists at `docs/handoffs/routing-matrix.md`
 - [ ] Integration execution mode decision artifact exists for selected orchestration mode

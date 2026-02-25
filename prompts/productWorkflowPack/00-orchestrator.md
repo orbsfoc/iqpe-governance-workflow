@@ -24,7 +24,8 @@ Technology choices must be derived from role intents plus tool evidence (`spec-t
 1) Run `mcp.action.bootstrap_workflow_pack`.
 2) Confirm bootstrap evidence at `docs/tooling/bootstrap-report.md`.
 3) Run `mcp.action.scaffold_service_workspace`.
-4) Confirm `repos/` workspace and naming ADR (`docs/adr/ADR-0001-repo-naming-conventions.md`) exist.
+4) Confirm `repos/` workspace boundary and naming ADR (`docs/adr/ADR-0001-repo-naming-conventions.md`) exist.
+	- Note: bootstrap scaffold must not create service/integration repos; repository creation is planning-driven.
 5) Confirm baseline artifacts exist:
 	- `docs/data-architecture-decision.md`
 	- `docs/plans/index.md`
