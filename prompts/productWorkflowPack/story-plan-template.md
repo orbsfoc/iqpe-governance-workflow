@@ -20,6 +20,15 @@ Use this template for each story/workstream plan file under `docs/plans/`.
 - Out-of-scope:
 - Dependencies (PLAN IDs / service prerequisites):
 
+## Service/module value balance (mandatory)
+- Customer/business value delivered:
+- Existing module/service reuse considered:
+- Service/module necessity evidence (why this must exist as separate module/service):
+- Duplicate-capability check (which existing modules were assessed and why they are insufficient):
+- Build-vs-buy/reuse decision and balanced rationale:
+- Expected lifecycle maintenance cost (engineering + operational):
+- Ownership and sunset/deprecation intent:
+
 ## Implementation approach
 - Components/services affected:
 - API/interface changes:

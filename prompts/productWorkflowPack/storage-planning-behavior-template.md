@@ -7,6 +7,14 @@ Use this template to document how each data type maps to storage characteristics
 - Secondary storage systems used:
 - Why this mapping is production-appropriate:
 
+## Service reuse analysis (mandatory)
+- Candidate standard/managed services considered (SQL/Redis/object/search/etc):
+- Interfaces/protocol compatibility required (SQL, Redis protocol, S3 API, etc):
+- Buy/reuse vs custom decision:
+- Balanced rationale (cost, speed-to-delivery, performance, durability, operability, portability, vendor lock-in):
+- If custom solution selected, why standard third-party services are insufficient:
+- Exit/migration strategy if provider constraints change:
+
 ## Data category mapping
 | Data type | Recommended storage | Access pattern | Latency target | Durability target | Scaling model | Structure/model |
 |---|---|---|---|---|---|---|
@@ -35,3 +43,5 @@ Use this template to document how each data type maps to storage characteristics
 - [ ] Source-of-truth boundaries are explicit.
 - [ ] Durability + backup/restore requirements are defined.
 - [ ] Scaling plan exists for 10x expected load.
+- [ ] Third-party standard service reuse options were assessed and documented.
+- [ ] Custom storage choices include explicit balanced tradeoff analysis and migration plan.

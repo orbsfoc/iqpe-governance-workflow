@@ -12,9 +12,14 @@ Use this file as `docs/plans/index.md` when planning behavior profile resolves:
 - Plan traceability required:
 
 ## Story plan mapping
-| REQ ID | PLAN ID | Story/Workstream | Plan File Path | Target Repo Path | Target Service ID | Owner | Status | DIAG IDs | TEST IDs |
-|---|---|---|---|---|---|---|---|---|---|
-| REQ-001 | PLAN-001 | Example story | docs/plans/PLAN-001-example-story.md | repos/go-application-service | SVC-EXAMPLE-001 | team-a | PLANNED | DIAG-001 | TEST-UNIT-001 |
+| REQ ID | PLAN ID | Story/Workstream | Plan File Path | Repo Action (create/update) | Target Repo Path | Target Service ID | Owner | Status | DIAG IDs | TEST IDs |
+|---|---|---|---|---|---|---|---|---|---|---|
+| REQ-001 | PLAN-001 | Example story | docs/plans/PLAN-001-example-story.md | update | repos/go-application-service | SVC-EXAMPLE-001 | team-a | PLANNED | DIAG-001 | TEST-UNIT-001 |
+
+## Repository action checks
+- Every `PLAN-*` row must include exactly one repo action: `create` or `update`.
+- `create` actions require justification in `docs/plans/repo-change-plan.md`.
+- Prefer `update` when existing repo boundary and ownership are still valid.
 
 ## Handoff routing linkage
 | PLAN ID | Producer Phase | Consumer Phase | Handoff ID | Routing Matrix Path | Ack Evidence Path |

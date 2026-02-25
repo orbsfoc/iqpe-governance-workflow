@@ -162,6 +162,7 @@ AI usage reporting template:
 
 Planning storage templates:
 - `plans-index-template.md` (copy to `docs/plans/index.md`)
+- `repo-change-plan-template.md` (copy to `docs/plans/repo-change-plan.md`)
 - `story-plan-template.md` (copy to `docs/plans/PLAN-<id>-<slug>.md`)
 - `storage-planning-behavior-template.md` (copy to `docs/plans/storage-planning-behavior.md`)
 - `eventing-planning-behavior-template.md` (copy to `docs/plans/eventing-planning-behavior.md`)
@@ -178,6 +179,9 @@ Draft/promotion and governance templates:
 - `diagrams-drift-protocol-template.md`
 - `test-execution-evidence-template.md`
 - `severity-classification-template.md`
+- `repository-readme-template.md`
+- `repository-changelog-template.md`
+- `handoff-traceability-pack-template.md`
 
 ## AI design patterns
 - Use planner-executor-verifier-governor pattern.

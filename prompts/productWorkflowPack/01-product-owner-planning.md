@@ -19,6 +19,7 @@ Define product intent and requirement baseline for a fresh product domain, const
 - `docs/openapi-contract-plan.md`
 - `docs/data-architecture-decision.md`
 - `docs/plans/index.md`
+- `docs/plans/repo-change-plan.md`
 - `docs/plans/PLAN-*.md` (when per-story storage is configured)
 - `docs/planning-behavior-resolution.md`
 - `docs/handoffs/routing-matrix.md`
@@ -79,6 +80,12 @@ If topology is `multi-repo`, planning must also provide:
 - concurrency plan for independent service streams
 - dependency graph showing prerequisite gates between workstreams
 
+Repository action guidance (mandatory for all topologies):
+- For each planned service/module, declare repo action as one of: `create` or `update`.
+- Prefer `update` when an existing repo already matches domain boundary, ownership, and change cadence.
+- Allow `create` only when justified by clear boundary separation, ownership, scaling, or release independence.
+- Record the decision and rationale in `docs/plans/repo-change-plan.md` and mirror in `docs/plans/index.md` target repo fields.
+
 ## Contract-first planning (mandatory)
 - Define contract baseline before dependent implementation starts.
 - Use OpenAPI for HTTP API boundaries.
@@ -99,12 +106,23 @@ If required plan storage controls are missing or violated, phase status must be 
 ## Data architecture decision (mandatory)
 - Capture canonical runtime data architecture in `docs/data-architecture-decision.md` using `data-architecture-decision-template.md`.
 - This artifact must declare expected runtime database/cache engines and allowed deviations.
+- Planning must assess reuse of standard third-party services (for example SQL/Redis/object-storage compatible offerings) before choosing custom storage implementations.
+- If custom storage is selected, include a balanced tradeoff explanation (cost, performance, durability, scalability, operability, portability/vendor lock-in) and migration/exit strategy.
 - If declared runtime data architecture conflicts with implementation intent and no approved deviation is present, status must be `BLOCKED`.
 
 ## Planning-vs-skill capability gate (mandatory)
 - If planning intent requires capabilities not currently available in installed MCP skills/actions, create `docs/tooling/skill-capability-gap.md` using `skill-capability-gap-template.md`.
 - Gap artifact must include owner, ETA, unblock criteria, and required closure evidence path.
 - Open capability gaps keep phase status `BLOCKED` unless owner-approved exception is recorded.
+
+## Service/module value and lifecycle balance (mandatory)
+- For every proposed service/module, document explicit customer/business value and intended outcome contribution.
+- Include a balanced lifecycle view: expected maintenance cost, operational burden, upgrade burden, and decommission/sunset expectations.
+- Compare reuse of existing internal modules and third-party services versus custom build; justify selected option with balanced tradeoffs.
+- Run a necessity test for each proposed service/module: prove it is required to satisfy boundaries, ownership, scale, or change cadence; if existing modules can satisfy the need safely, prefer reuse.
+- Explicitly reject unwarranted service creation (duplicate capability without defensible boundary/value rationale).
+- Explicitly reject unwarranted repo creation when existing repo boundaries fit.
+- If value-to-cost balance is unclear or unsupported, planning status must be `BLOCKED`.
 
 ## Requirement quality rules
 - Each requirement must include acceptance criteria in Given/When/Then format.

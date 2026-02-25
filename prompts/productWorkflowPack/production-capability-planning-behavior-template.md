@@ -19,6 +19,13 @@ Use this template to force production-capable planning choices early.
 - Test strategy coverage (unit/integration/contract/e2e):
 - Dependency/version management policy:
 
+## Value-to-cost balance (mandatory)
+- Service/module value hypothesis and customer outcome linkage:
+- Reuse alternatives considered (internal modules, third-party managed services):
+- Build-vs-buy/reuse rationale with tradeoffs:
+- Estimated ongoing maintenance cost profile:
+- Planned review cadence for value realization vs maintenance burden:
+
 ## Upgrade and rollout plan (mandatory)
 - Upgrade model (expand/migrate/contract, blue/green, canary):
 - Backward compatibility requirements:
@@ -38,6 +45,7 @@ Use this template to force production-capable planning choices early.
 ## Gate checks
 - [ ] Scalability and performance budgets are documented and measurable.
 - [ ] Maintainability controls are explicit and owned.
+- [ ] Value-to-cost balance is documented and justified.
 - [ ] Upgrade plan includes rollback and compatibility strategy.
 - [ ] Zero-downtime approach is documented and testable.
 - [ ] Operability/SLO ownership is assigned.

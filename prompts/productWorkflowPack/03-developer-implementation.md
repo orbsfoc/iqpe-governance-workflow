@@ -95,6 +95,10 @@ If implementation structure diverges from `docs/repo-topology-decision.md`, stat
 - Service review evidence (`docs/handoffs/dev/service-review-log.md`)
 - Orchestration review evidence (`docs/handoffs/dev/orchestration-review-log.md`)
 - Coding-practice conformance notes (`docs/handoffs/dev/code-quality-review.md`)
+- Per-repo README maturity updates (purpose/scope/runbook/interfaces/ownership/traceability/plan-to-implementation summary)
+- Per-repo changelog updates with plan references and change IDs
+- Per-repo `docs/current-state/implementation-summary.md` with plan intent + implementation outcomes
+- Per-repo `docs/handoffs/traceability-pack.md` with ID inventory, mapping, planning profile snapshot, ADR ledger, and diagram index
 - AI usage rollup (`docs/tooling/ai-usage-report.md`)
 - `docs/handoffs/dev/phase-gate.md`
 

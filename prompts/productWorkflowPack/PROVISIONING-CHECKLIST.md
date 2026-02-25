@@ -71,6 +71,10 @@ Template retrieval for phase artifacts:
 - `run_action` with `action_id: mcp.action.workflow_preflight_check` and args:
 	- `spec_dir` (mandatory)
 	- `target_root` (mandatory; absolute path to target demo repo root)
+- `run_action` with `action_id: mcp.action.context_promotion_publish` and args:
+	- `target_root` (mandatory; absolute path to target demo repo root)
+	- `architecture_repo_root` (recommended; defaults to `<target_root>/SavedSystemInfo/iqpe-architecture-standards`)
+	- `catalog_repo_root` (recommended; defaults to `<target_root>/SavedSystemInfo/iqpe-library-catalog`)
 - `run_action` with `action_id: mcp.action.spec_tech_detect` and args:
 	- `spec_dir` (mandatory)
 	- `target_root` (mandatory; absolute path to target demo repo root)
@@ -82,6 +86,11 @@ Template retrieval for phase artifacts:
 	- `expected_version` (optional)
 
 If required artifacts are still missing after this step, execute `MCP-ACTION-RUNBOOK.md` and keep status `BLOCKED` until both artifacts exist.
+
+Expected context persistence artifacts:
+- `<target_root>/docs/tooling/context-promotion-report.json`
+- `<target_root>/SavedSystemInfo/iqpe-architecture-standards/docs/source/02-architecture/promotions/<project-slug>/`
+- `<target_root>/SavedSystemInfo/iqpe-library-catalog/docs/artifacts/promotions/<project-slug>/`
 
 If MCP client cannot call `run_action` in the current session, use:
 - Another MCP-capable client connected to the same MCP servers/skills and execute bootstrap + preflight actions per `MCP-ACTION-RUNBOOK.md`.
