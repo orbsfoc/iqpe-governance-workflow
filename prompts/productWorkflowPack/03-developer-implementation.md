@@ -13,10 +13,13 @@ Implement code from approved architect plan and diagrams, preserving traceabilit
 - Approved `docs/implementation-plan.md`
 - Approved `docs/plans/index.md`
 - Approved `docs/plans/planning-signoff.md` with `Approval Status: APPROVED`
+- Approved `docs/plans/control-applicability-matrix.md`
 - Approved per-story plan artifacts under configured plan directory (when `plan_storage_mode=per-story-files`)
 - Approved `docs/technology-constraints.md` (`TC-*` resolved)
 - Approved `docs/repo-topology-decision.md`
 - Approved interface-contract baseline and ownership for in-scope integration boundaries
+- Approved model boundary classification when shared-module stream exists (`docs/plans/model-boundary-classification.md`)
+- Approved shared contract ownership boundary when client/server share a contract (`docs/openapi-contract-ownership.md`)
 - Approved code quality/review ADR baseline (including SOLID/DRY policy)
 - Approved general design principles ADR baseline
 - Approved implementation standards ADRs for selected runtime/language (as applicable)
@@ -31,6 +34,9 @@ Before drafting or implementation, run `mcp.action.phase_precondition_check` wit
 Run `mcp.action.materialize_repos_from_plan` after planning signoff and before implementation:
 - `create` actions create missing repos from approved plan targets.
 - `update` actions require existing repos; missing update targets remain `BLOCKED`.
+When a dedicated OpenAPI repository is planned, run `mcp.action.bootstrap_openapi_repo_if_missing`:
+- Creates `repos/openapi-contracts` (or configured target) only if missing.
+- Requires approved planning signoff and matching `create` action in repo change plan.
 Run `mcp.action.implementation_parity_check` before phase-03 PASS decision; if declared adaptor IDs in `docs/technology-constraints.md` do not match implemented adaptor directories, keep status `BLOCKED` until parity is resolved or approved exception is recorded.
 
 ## Implementation requirements

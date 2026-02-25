@@ -14,6 +14,10 @@
 - [ ] Plan artifacts are stored in configured planning directory with per-story traceability mapping
 - [ ] `docs/plans/index.md` exists and maps REQ -> PLAN -> plan-file-path -> target repo
 - [ ] `docs/plans/planning-signoff.md` exists and contains `Approval Status: APPROVED` before phase-03 PASS
+- [ ] `docs/plans/control-applicability-matrix.md` exists with row-level APPLICABLE/NOT-APPLICABLE decisions, rationale, owner, and approval status
+- [ ] Shared-module streams include approved `docs/plans/model-boundary-classification.md` with domain-internal vs shared-contract classification
+- [ ] Shared client/server contract dependencies include approved `docs/openapi-contract-ownership.md`
+- [ ] Partial/skipped intent/control items are logged in `docs/plans/intent-control-accountability.md` with remediation and closure phase
 - [ ] Adaptor/service selections are mapped to approved corporate ADR/technology sources
 - [ ] Repository topology decision ADR is present and approved
 - [ ] Data architecture decision exists (`docs/data-architecture-decision.md`) and matches constraints/runtime evidence or has approved deviation

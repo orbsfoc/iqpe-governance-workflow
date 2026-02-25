@@ -21,6 +21,10 @@ Define product intent and requirement baseline for a fresh product domain, const
 - `docs/plans/index.md`
 - `docs/plans/planning-signoff.md`
 - `docs/plans/repo-change-plan.md`
+- `docs/plans/control-applicability-matrix.md`
+- `docs/plans/model-boundary-classification.md` (mandatory when shared-module stream exists)
+- `docs/plans/intent-control-accountability.md` (mandatory when intent/control is partially applied or skipped)
+- `docs/openapi-contract-ownership.md` (mandatory when client and server share one contract)
 - `docs/plans/PLAN-*.md` (when per-story storage is configured)
 - `docs/planning-behavior-resolution.md`
 - `docs/handoffs/routing-matrix.md`
@@ -75,7 +79,6 @@ If topology is `multi-repo`, planning must also provide:
 - repo list and ownership map
 - workstream-to-repo mapping with primary language/runtime
 - cross-repo integration strategy
-- contract agreement path and contract ownership (OpenAPI when HTTP APIs are involved)
 - contract agreement path and contract ownership (format selected from resolved interface constraints)
 - pack generation/distribution plan (skills/prompts/bootstrap assets)
 - per-repo test evidence mapping (`TEST-UNIT-*`, `TEST-API-*`, `TEST-UI-*`)
@@ -90,6 +93,26 @@ Repository action guidance (mandatory for all topologies):
 - Execution semantics (deterministic):
 	- `create`: repository is materialized only if target path does not already exist.
 	- `update`: repository must already exist; workflow must not auto-create missing update targets.
+
+## Control applicability matrix (mandatory)
+- Produce `docs/plans/control-applicability-matrix.md` from resolved planning controls and role intents.
+- Each row must include: control/intent ID, applicability (`APPLICABLE`/`NOT-APPLICABLE`), rationale, owner, approval status, and evidence path.
+- `APPLICABLE` rows must map to implementation evidence.
+- `NOT-APPLICABLE` rows require approved rationale.
+- If a control/intent is partially applied or skipped, record accountability in `docs/plans/intent-control-accountability.md`.
+
+## Model boundary classification (mandatory when shared-module stream exists)
+- If planning proposes shared-module stream(s), produce `docs/plans/model-boundary-classification.md`.
+- For each stream, classify as either:
+	- `DOMAIN_MODEL_INTERNAL` (service-internal), or
+	- `SHARED_CONTRACT_DTO_DAO` (cross-service boundary artifact).
+- Shared classification requires explicit ownership, lifecycle cost rationale, and approval.
+- If justification is absent, default to `DOMAIN_MODEL_INTERNAL` and remove/merge unwarranted shared-module stream.
+
+## Shared OpenAPI ownership boundary (mandatory when client and server share contract)
+- When both client and server depend on the same API contract, produce `docs/openapi-contract-ownership.md`.
+- The contract boundary must be independent (separate contract repo or equivalent independent boundary) and approved.
+- Client or server implementation repos must not become implicit source of truth for shared contract governance.
 
 ## Contract-first planning (mandatory)
 - Define contract baseline before dependent implementation starts.
@@ -107,6 +130,9 @@ If topology decision is missing, phase status must be `BLOCKED`.
 If planning behavior profile is not loaded/resolved, phase status must be `BLOCKED`.
 
 If required plan storage controls are missing or violated, phase status must be `BLOCKED`.
+If control applicability matrix is missing, unapproved, or lacks required fields, phase status must be `BLOCKED`.
+If shared-module stream exists without model boundary classification, phase status must be `BLOCKED`.
+If shared client/server contract ownership boundary is missing or unapproved, phase status must be `BLOCKED`.
 
 ## Data architecture decision (mandatory)
 - Capture canonical runtime data architecture in `docs/data-architecture-decision.md` using `data-architecture-decision-template.md`.

@@ -25,6 +25,10 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 	- service/orchestration testing feedback loops
 	- code quality and review policy (SOLID/DRY + mandatory feedback loop)
 - `docs/traceability-matrix.md` covering `REQ -> PLAN -> DIAG`
+- `docs/plans/control-applicability-matrix.md`
+- `docs/plans/model-boundary-classification.md` (mandatory when shared-module stream exists)
+- `docs/plans/intent-control-accountability.md` (mandatory for partial/skipped intent/control application)
+- `docs/openapi-contract-ownership.md` (mandatory when shared client/server contract dependency exists)
 - `docs/diagrams/system-context.mmd`
 - `docs/diagrams/sequence-flow.mmd`
 - `docs/diagrams/components.mmd`
@@ -38,6 +42,7 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 ## Planning rules
 - Plan must be derived from `SPEC_DIR` specs and technical docs/guidance with source citations.
 - Plan must align to `docs/planning-behavior-resolution.md` values derived from MCP-loaded profile.
+- Plan must include applicability classification for each resolved planning-behavior control and role intent.
 - Plan storage layout and naming must align to resolved profile controls (`plan_storage_mode`, `plan_directory`, `plan_index_file`, `plan_story_file_pattern`).
 - For non-owner runs, draft outputs must be created under `docs/drafts/workflow/phase-02-architect-handoff/` and mirror canonical relative paths.
 - Any unresolved core technology decision must be marked as `TC-*` and block implementation.
@@ -45,6 +50,8 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 - Plan must define concurrent service workstreams and their independent review gates.
 - Plan must define integration/orchestration steps with explicit dependency gates on prerequisite workstreams.
 - Approved interface contract baseline must exist before implementation workstreams begin.
+- Shared client/server contract dependencies must declare explicit ownership boundary and source-of-truth artifact.
+- Shared-module streams must declare model boundary classification and approval.
 - Code quality and review ADR baseline must be approved before implementation workstreams begin.
 - If `docs/tooling/spec-tech-detect.json` contains implementation decisions, materialize them into `docs/technology-constraints.md` and corresponding ADR entries before declaring unresolved TC constraints.
 - Adaptor/service selections must be backed by approved corporate ADR/technology guidance; local-only choices are not allowed.
@@ -77,3 +84,6 @@ If any mandatory `TC-*` decision is unresolved, mark `BLOCKED`.
 If adaptor/service choices lack corporate ADR backing, mark `BLOCKED`.
 If authority fields are missing or `Approval Status` is not `APPROVED`, mark `BLOCKED`.
 If draft outputs are not accompanied by promotion checklist evidence (`draft-promotion-checklist-template.md`), keep status `BLOCKED`.
+If control applicability matrix is missing or unapproved, keep status `BLOCKED`.
+If required model boundary classification is missing or unapproved, keep status `BLOCKED`.
+If required shared contract ownership boundary is missing or unapproved, keep status `BLOCKED`.

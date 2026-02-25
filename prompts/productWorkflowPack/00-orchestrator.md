@@ -63,9 +63,14 @@ If initialization fails, set workflow to `BLOCKED`.
 1) Run `mcp.action.phase_precondition_check` with `phase=01`, then Product Owner creates intent and requirement set.
 2) Run `mcp.action.phase_precondition_check` with `phase=02`, then Architect defines contract baseline, topology ADRs, and dependency model.
 3) Require `docs/plans/planning-signoff.md` with `Approval Status: APPROVED` before `phase=03` precondition can PASS.
-4) Run `mcp.action.phase_precondition_check` with `phase=03`, then Developer executes split implementation workstreams from approved plan/diagrams.
-5) Run `mcp.action.phase_precondition_check` with `phase=04`, then Developer/Architect execute integration/orchestration steps according to dependency gates.
-6) Run `mcp.action.phase_precondition_check` with `phase=05`, then Release Reviewer validates readiness and traceability.
+4) Require `docs/plans/control-applicability-matrix.md` before `phase=03` precondition can PASS.
+	- Each row must capture: control/intent ID, APPLICABLE/NOT-APPLICABLE, rationale, owner, approval status.
+	- APPLICABLE rows must include implementation evidence; NOT-APPLICABLE rows require approved rationale.
+5) Require model boundary classification when shared-module streams are present (`docs/plans/model-boundary-classification.md`).
+6) Require explicit API contract ownership boundary when client and server share one contract (`docs/openapi-contract-ownership.md`).
+7) Run `mcp.action.phase_precondition_check` with `phase=03`, then Developer executes split implementation workstreams from approved plan/diagrams.
+8) Run `mcp.action.phase_precondition_check` with `phase=04`, then Developer/Architect execute integration/orchestration steps according to dependency gates.
+9) Run `mcp.action.phase_precondition_check` with `phase=05`, then Release Reviewer validates readiness and traceability.
 
 ## Dependency orchestration contract (mandatory)
 - Workflow must define split steps/workstreams and explicit dependencies before implementation starts.

@@ -154,6 +154,7 @@ Required action baseline includes:
 - `mcp.action.bootstrap_workflow_pack`
 - `mcp.action.scaffold_service_workspace`
 - `mcp.action.materialize_repos_from_plan`
+- `mcp.action.bootstrap_openapi_repo_if_missing` (when dedicated OpenAPI repository is planned)
 - `mcp.action.context_promotion_publish`
 - `mcp.action.workflow_preflight_check`
 - `mcp.action.phase_precondition_check`
@@ -171,6 +172,10 @@ Planning storage templates:
 - `production-capability-planning-behavior-template.md` (copy to `docs/plans/production-capability-planning-behavior.md`)
 - `planning-signoff-template.md` (copy to `docs/plans/planning-signoff.md`)
 - `known-blockers-template.md` (copy to `docs/known-blockers.md`)
+- `control-applicability-matrix-template.md` (copy to `docs/plans/control-applicability-matrix.md`)
+- `model-boundary-classification-template.md` (copy to `docs/plans/model-boundary-classification.md`)
+- `intent-control-accountability-template.md` (copy to `docs/plans/intent-control-accountability.md`)
+- `openapi-contract-ownership-template.md` (copy to `docs/openapi-contract-ownership.md`)
 
 Draft/promotion and governance templates:
 - `draft-promotion-checklist-template.md`
