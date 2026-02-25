@@ -19,6 +19,8 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 - ADR artifacts for:
 	- API contract governance (OpenAPI-first)
 	- service repository topology
+	- data separation and usage boundaries
+	- CQRS/read-write model split decision (when applicable)
 	- orchestration dependency and integration sequencing
 	- service/orchestration testing feedback loops
 	- code quality and review policy (SOLID/DRY + mandatory feedback loop)
@@ -29,6 +31,7 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 - `docs/diagrams/error-flow.mmd`
 - `docs/diagrams/mapping-table.md`
 - `docs/diagrams/drift-protocol.md`
+- `docs/handoffs/event-traceability-ledger.md` (mandatory when eventing/Kafka is in scope)
 - `docs/tech-radar.md` (incremental update baseline starting in phase 02)
 - `docs/handoffs/architect/phase-gate.md`
 

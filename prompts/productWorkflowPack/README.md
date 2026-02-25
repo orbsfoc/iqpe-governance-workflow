@@ -107,6 +107,9 @@ ADR best-practice rule:
 - Go implementation standards baseline: `ADR-GO-IMPLEMENTATION-STANDARDS.md`.
 - Go + hexagonal principle mapping: `ADR-GO-DESIGN-PRINCIPLES-HEXAGONAL.md`.
 - Preferred Go design patterns for hexagonal systems: `ADR-GO-PREFERRED-DESIGN-PATTERNS-HEXAGONAL.md`.
+- Data separation and usage boundaries baseline: `ADR-DATA-SEPARATION-AND-USAGE-BOUNDARIES.md`.
+- CQRS/read-write pattern guidance: `ADR-CQRS-READ-WRITE-MODEL-PATTERNS.md`.
+- Kafka eventing design patterns and reliability controls: `ADR-KAFKA-EVENTING-DESIGN-PATTERNS.md`.
 
 MCP-configurable planning behaviors:
 - Load planning behavior profile via MCP from architecture guidance before planning decisions.
@@ -182,6 +185,7 @@ Draft/promotion and governance templates:
 - `repository-readme-template.md`
 - `repository-changelog-template.md`
 - `handoff-traceability-pack-template.md`
+- `event-traceability-ledger-template.md`
 
 ## AI design patterns
 - Use planner-executor-verifier-governor pattern.

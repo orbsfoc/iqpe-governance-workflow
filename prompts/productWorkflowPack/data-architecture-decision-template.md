@@ -12,6 +12,9 @@ Use this artifact to lock the canonical runtime data architecture and record app
 - Primary database engine:
 - Primary cache engine:
 - Persistence boundary summary:
+- Data separation model (OLTP/read/cache/search/analytics/object):
+- CQRS decision: applied | not-applied
+- CQRS rationale and consistency model (if applied):
 - Contract impact references (`TC-*`, ADR IDs):
 
 ## Required consistency checks
