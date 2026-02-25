@@ -79,9 +79,8 @@ Use `BLOCKED` when prerequisites or technical decisions are missing.
 - Local demo mode assumption: MCP server binary `iqpe-localmcp` is installed and available on user `PATH`.
 
 Tooling language policy (mandatory):
-- All project tooling/runtime utilities must be implemented in Go for portability.
-- New tooling contributions in non-Go languages are `BLOCKED` unless an explicit approved exception exists.
-- Existing non-Go helper scripts, if any remain, must be treated as transitional and scheduled for Go replacement.
+- Tooling/runtime implementation constraints must follow the approved toolchain artifacts and installed skill/action implementations for this workspace.
+- New tooling contributions must match approved implementation standards for the selected toolchain, or be explicitly exception-approved.
 
 Repository boundary policy (mandatory):
 - Product, architecture, and tooling repositories operate independently.
@@ -104,12 +103,11 @@ ADR best-practice rule:
 - Any exception to service-per-repo must be documented as an ADR decision with rationale, risk, and approval.
 - Code review feedback loops and coding principles (`SOLID`, `DRY`) are mandatory best-practice baseline; see `ADR-BEST-PRACTICE-CODE-QUALITY-AND-REVIEW.md`.
 - General design principles baseline: `ADR-GENERAL-DESIGN-PRINCIPLES.md`.
-- Go implementation standards baseline: `ADR-GO-IMPLEMENTATION-STANDARDS.md`.
-- Go + hexagonal principle mapping: `ADR-GO-DESIGN-PRINCIPLES-HEXAGONAL.md`.
-- Preferred Go design patterns for hexagonal systems: `ADR-GO-PREFERRED-DESIGN-PATTERNS-HEXAGONAL.md`.
+- Runtime/language-specific implementation standards are applied when selected by constraints and tool evidence.
+- Go-specific standards remain available when Go is selected (`ADR-GO-IMPLEMENTATION-STANDARDS.md`, `ADR-GO-DESIGN-PRINCIPLES-HEXAGONAL.md`, `ADR-GO-PREFERRED-DESIGN-PATTERNS-HEXAGONAL.md`).
 - Data separation and usage boundaries baseline: `ADR-DATA-SEPARATION-AND-USAGE-BOUNDARIES.md`.
 - CQRS/read-write pattern guidance: `ADR-CQRS-READ-WRITE-MODEL-PATTERNS.md`.
-- Kafka eventing design patterns and reliability controls: `ADR-KAFKA-EVENTING-DESIGN-PATTERNS.md`.
+- Eventing-specific design patterns and reliability controls are applied when event-driven integration is selected (`ADR-KAFKA-EVENTING-DESIGN-PATTERNS.md` when Kafka is selected).
 
 MCP-configurable planning behaviors:
 - Load planning behavior profile via MCP from architecture guidance before planning decisions.
@@ -170,6 +168,8 @@ Planning storage templates:
 - `storage-planning-behavior-template.md` (copy to `docs/plans/storage-planning-behavior.md`)
 - `eventing-planning-behavior-template.md` (copy to `docs/plans/eventing-planning-behavior.md`)
 - `production-capability-planning-behavior-template.md` (copy to `docs/plans/production-capability-planning-behavior.md`)
+- `planning-signoff-template.md` (copy to `docs/plans/planning-signoff.md`)
+- `known-blockers-template.md` (copy to `docs/known-blockers.md`)
 
 Draft/promotion and governance templates:
 - `draft-promotion-checklist-template.md`

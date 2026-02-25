@@ -12,6 +12,8 @@
 - [ ] Planning behavior profile loaded via MCP and resolution recorded in `docs/planning-behavior-resolution.md`
 - [ ] Plan storage controls resolved and applied (`plan_storage_mode`, `plan_directory`, `plan_index_file`, `plan_story_file_pattern`)
 - [ ] Plan artifacts are stored in configured planning directory with per-story traceability mapping
+- [ ] `docs/plans/index.md` exists and maps REQ -> PLAN -> plan-file-path -> target repo
+- [ ] `docs/plans/planning-signoff.md` exists and contains `Approval Status: APPROVED` before phase-03 PASS
 - [ ] Adaptor/service selections are mapped to approved corporate ADR/technology sources
 - [ ] Repository topology decision ADR is present and approved
 - [ ] Data architecture decision exists (`docs/data-architecture-decision.md`) and matches constraints/runtime evidence or has approved deviation
@@ -27,10 +29,10 @@
 - [ ] VS Code MCP config present at `.vscode/mcp.json`
 - [ ] `mcp.action.bootstrap_workflow_pack` executed with evidence in `docs/tooling/bootstrap-report.md`
 - [ ] `mcp.action.scaffold_service_workspace` executed and reported PASS
-- [ ] `repos/` workspace exists with starter service repositories and `repos/demo-compose/`
+- [ ] `repos/` workspace exists with planned repositories and integration workspace artifacts aligned to topology decision
 - [ ] Naming convention ADR exists at `docs/adr/ADR-0001-repo-naming-conventions.md`
 - [ ] Handoff routing matrix exists at `docs/handoffs/routing-matrix.md`
-- [ ] Compose mode decision exists at `docs/integration/compose-mode-decision.md`
+- [ ] Integration execution mode decision artifact exists for selected orchestration mode
 - [ ] MCP usage evidence recorded in `docs/tooling/mcp-usage-evidence.md`
 - [ ] Read-only ownership manifest exists at `docs/tooling/read-only-manifest.json`
 - [ ] Workflow feedback docs are created under `docs/feedback/workflow/` (not `docs/tooling/`, unless approved exception)
@@ -39,6 +41,7 @@
 - [ ] `mcp.action.phase_precondition_check` is PASS for current phase before phase authoring starts
 - [ ] `mcp.action.implementation_parity_check` returns PASS before phase-03 PASS
 - [ ] `mcp.action.release_blocker_ownership_lint` returns PASS before final release GO
+- [ ] `docs/known-blockers.md` exists and each open blocker has owner + ETA + evidence path
 - [ ] Open planning-vs-skill gaps are tracked in `docs/tooling/skill-capability-gap.md` and resolved or exception-approved
 - [ ] `mcp.action.context_promotion_publish` returns PASS with shared repo roots configured
 - [ ] `docs/tooling/context-promotion-report.json` exists and lists published architecture/catalog targets

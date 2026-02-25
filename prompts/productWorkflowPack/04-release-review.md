@@ -28,7 +28,7 @@ Perform final readiness review against requirements, architecture plan, diagrams
 - Technology radar is maintained with current adoption status and phase suitability
 - Technology radar summary is produced for release decision (`adopt / trial / hold / retire`)
 - Source integrity: requirements and plan decisions reference `SPEC_DIR` paths
-- Corporate governance integrity: adaptor/service selections and technical decisions reference approved corporate ADR/technology sources
+- Corporate governance integrity: adaptor/service selections and implementation decisions reference approved corporate ADR/technology sources
 - Authority completeness: ADR/constraints artifacts include `Authoritative Source`, `Approval Owner`, and `Approval Status`
 - Code quality governance integrity: approved ADR exists for coding principles and mandatory code review feedback loops
 - Review evidence integrity: reviewer findings and developer remediation responses are recorded for implemented scope

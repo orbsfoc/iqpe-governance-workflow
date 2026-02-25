@@ -17,7 +17,7 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 - `docs/technology-constraints.md` with `TC-*` decisions
 - ADR artifacts for technical/adaptor decisions using `adr-decision-template` authority fields
 - ADR artifacts for:
-	- API contract governance (OpenAPI-first)
+	- interface contract governance (contract-first using resolved format)
 	- service repository topology
 	- data separation and usage boundaries
 	- CQRS/read-write model split decision (when applicable)
@@ -31,7 +31,7 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 - `docs/diagrams/error-flow.mmd`
 - `docs/diagrams/mapping-table.md`
 - `docs/diagrams/drift-protocol.md`
-- `docs/handoffs/event-traceability-ledger.md` (mandatory when eventing/Kafka is in scope)
+- `docs/handoffs/event-traceability-ledger.md` (mandatory when event-driven integration is in scope)
 - `docs/tech-radar.md` (incremental update baseline starting in phase 02)
 - `docs/handoffs/architect/phase-gate.md`
 
@@ -44,9 +44,9 @@ Use technical docs/specs to produce an implementation plan, technology constrain
 - Mermaid is required for all diagrams.
 - Plan must define concurrent service workstreams and their independent review gates.
 - Plan must define integration/orchestration steps with explicit dependency gates on prerequisite workstreams.
-- OpenAPI contract must be approved before implementation workstreams begin.
+- Approved interface contract baseline must exist before implementation workstreams begin.
 - Code quality and review ADR baseline must be approved before implementation workstreams begin.
-- If `docs/tooling/spec-tech-detect.json` contains stack decisions, materialize them into `docs/technology-constraints.md` and corresponding ADR entries before declaring unresolved TC constraints.
+- If `docs/tooling/spec-tech-detect.json` contains implementation decisions, materialize them into `docs/technology-constraints.md` and corresponding ADR entries before declaring unresolved TC constraints.
 - Adaptor/service selections must be backed by approved corporate ADR/technology guidance; local-only choices are not allowed.
 - If corporate backing is missing for an adaptor/service choice, record as blocked decision and set phase status to `BLOCKED`.
 - For each technical/adaptor decision, include explicit fields in ADR/constraints artifacts:

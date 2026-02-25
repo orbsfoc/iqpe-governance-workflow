@@ -45,8 +45,8 @@ Set `SPEC_DIR` to the provided product spec folder for this run.
 
 Before setting TC-003/TC-004 to unresolved:
 - Run `mcp.action.spec_tech_detect` and review `docs/tooling/spec-tech-detect.json`.
-- If specs indicate stack choices (for example `golang` backend, `react` frontend, `postgres` persistent engine, `flyway` migration tool), capture them into technology constraints and ADR artifacts.
-- These stack examples are informational only; approved corporate baseline artifacts are authoritative when conflicts exist.
+- Capture detected implementation constraints into technology constraints and ADR artifacts.
+- Use approved corporate baseline artifacts as authoritative when conflicts exist.
 
 Validate using MCP/server-managed checks and evidence policy.
 
@@ -60,9 +60,11 @@ Template retrieval for phase artifacts:
 ## 3) Run readiness checks
 - `run_action` with `action_id: mcp.action.bootstrap_workflow_pack` and args:
 	- `target_root` (mandatory; absolute path to target demo repo root)
+	- `target_root` must be runtime-visible (container-mounted path when using MCP in Docker)
 	- `spec_dir` (optional)
 - `run_action` with `action_id: mcp.action.scaffold_service_workspace` and args:
 	- `target_root` (mandatory; absolute path to target demo repo root)
+	- `target_root` must be runtime-visible (container-mounted path when using MCP in Docker)
 	- `workspace_dir` (optional; default `repos`)
 - Confirm scaffold artifacts exist:
 	- `docs/data-architecture-decision.md`
@@ -71,8 +73,15 @@ Template retrieval for phase artifacts:
 - `run_action` with `action_id: mcp.action.workflow_preflight_check` and args:
 	- `spec_dir` (mandatory)
 	- `target_root` (mandatory; absolute path to target demo repo root)
+	- `target_root` must be runtime-visible (container-mounted path when using MCP in Docker)
 - `run_action` with `action_id: mcp.action.context_promotion_publish` and args:
 	- `target_root` (mandatory; absolute path to target demo repo root)
+	- `target_root` must be runtime-visible (container-mounted path when using MCP in Docker)
+
+Path guidance:
+- Host path example: `/home/norman/Code/demo3-workspace`
+- Mounted path example used by runtime container: `/workspace/demo3-workspace`
+- Use mounted path for all `run_action` calls executed through containerized MCP runtime.
 	- `architecture_repo_root` (recommended; defaults to `<target_root>/SavedSystemInfo/iqpe-architecture-standards`)
 	- `catalog_repo_root` (recommended; defaults to `<target_root>/SavedSystemInfo/iqpe-library-catalog`)
 - `run_action` with `action_id: mcp.action.spec_tech_detect` and args:
@@ -94,7 +103,7 @@ Expected context persistence artifacts:
 
 If MCP client cannot call `run_action` in the current session, use:
 - Another MCP-capable client connected to the same MCP servers/skills and execute bootstrap + preflight actions per `MCP-ACTION-RUNBOOK.md`.
-- Or self-service from installed skill:
+- Or implementation-defined self-service from installed skill/runtime tooling:
 	- `TARGET_ROOT=<target_root_abs_path> SPEC_DIR=<spec_dir_path> GO_BIN="$(command -v go)" && "$GO_BIN" run "$TARGET_ROOT/.github/skills/local-mcp-setup/bootstrap_preflight.go" --target-root "$TARGET_ROOT" --spec-dir "$SPEC_DIR"`
 	- Confirm generated artifacts include `docs/tooling/spec-tech-detect.json` before architect phase.
 	- The generated detection merges `SPEC_DIR` with `./.github/skills/local-mcp-setup/corporate-approved-tech.json`.

@@ -12,15 +12,15 @@ Implement code from approved architect plan and diagrams, preserving traceabilit
 ## Mandatory preconditions
 - Approved `docs/implementation-plan.md`
 - Approved `docs/plans/index.md`
+- Approved `docs/plans/planning-signoff.md` with `Approval Status: APPROVED`
 - Approved per-story plan artifacts under configured plan directory (when `plan_storage_mode=per-story-files`)
 - Approved `docs/technology-constraints.md` (`TC-*` resolved)
 - Approved `docs/repo-topology-decision.md`
-- Approved OpenAPI contract baseline and ownership
+- Approved interface-contract baseline and ownership for in-scope integration boundaries
 - Approved code quality/review ADR baseline (including SOLID/DRY policy)
 - Approved general design principles ADR baseline
-- Approved Go implementation standards ADR baseline
-- Approved Go hexagonal design principles ADR baseline
-- Approved Go preferred design patterns ADR baseline
+- Approved implementation standards ADRs for selected runtime/language (as applicable)
+- Approved architecture pattern ADRs required by selected topology and constraints (as applicable)
 - Approved diagram set and mapping table
 - Completed architect phase gate
 - Evidence that requirements were sourced from `SPEC_DIR`
@@ -33,7 +33,7 @@ Run `mcp.action.implementation_parity_check` before phase-03 PASS decision; if d
 ## Implementation requirements
 - Implement against `PLAN-*` items; reference IDs in implementation notes.
 - For each implemented `PLAN-*`, reference the owning plan file path from `docs/plans/index.md`.
-- Preserve architecture layers: UI, API/controller, service/domain, persistence.
+- Preserve architecture boundaries defined by approved plan/diagrams/constraints.
 - Apply mandatory coding principles: `SOLID`, `DRY`, and clear module cohesion.
 - Enforce canonical error response schema for non-2xx paths:
    - `code`, `message`, `details`, `correlationId`
@@ -85,7 +85,7 @@ If implementation structure diverges from `docs/repo-topology-decision.md`, stat
 ## Required outputs
 - Implementation artifacts
 - Run/build/test instructions
-- `docs/integration/compose-mode-decision.md`
+- Integration execution mode decision artifact (`docs/integration/compose-mode-decision.md` when compose-based orchestration is selected)
 - Test evidence and command outputs
 - Test evidence must use `test-execution-evidence-template.md` format (`command`, `expected`, `actual`, `exit_code`, `artifact_path`).
 - Updated repository change log (`CHANGELOG.md` or `docs/change-log.md`) with key-doc references
@@ -107,10 +107,8 @@ Use `templates/phase-gate-template.md`.
 Status cannot be `PASS` unless required tests, error-path evidence, change-log updates, and documented reviewer feedback/remediation are present.
 Status cannot be `PASS` when `execution_status` remains `draft-only`.
 
-## Compose mode contract (mandatory)
-- Record selected compose mode in `docs/integration/compose-mode-decision.md` using `compose-mode-decision-template.md`.
-- Allowed values:
-   - `local-dev`
-   - `integration-demo`
-- For `integration-demo`, include evidence for repo checkout/update and compose integration verification.
-- If compose mode evidence is missing for selected mode, phase status must be `BLOCKED`.
+## Integration mode contract (mandatory)
+- Record selected integration execution mode in an approved decision artifact.
+- When compose-based orchestration is selected, use `docs/integration/compose-mode-decision.md` with `compose-mode-decision-template.md`.
+- Include evidence for selected mode execution and verification.
+- If selected integration mode evidence is missing, phase status must be `BLOCKED`.

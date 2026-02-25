@@ -3,8 +3,10 @@
 Use this runbook when orchestrator is BLOCKED due to missing `bootstrap-report.md` or `workflow-preflight.json`.
 
 ## Required arguments
-- `target_root`: absolute path to the target demo repo root
+- `target_root`: absolute path to the target demo repo root **as visible to the MCP runtime process/container**
 - `spec_dir`: path to the spec directory for this run
+
+If MCP runtime is containerized, use mounted workspace path (for example `/workspace/demo3-workspace`) rather than host path (`/home/...`).
 
 ## Required MCP action calls
 0) `run_action`
@@ -40,7 +42,7 @@ Self-service option (product team can execute directly from installed skill, fro
 
 `TARGET_ROOT=<target_root_abs_path> SPEC_DIR=<spec_dir_path> GO_BIN="$(command -v go)" && "$GO_BIN" run "$TARGET_ROOT/.github/skills/local-mcp-setup/bootstrap_preflight.go" --target-root "$TARGET_ROOT" --spec-dir "$SPEC_DIR"`
 
-This command merges `SPEC_DIR` detection with the installed corporate approved baseline file:
+This command reflects the current installed skill implementation and merges `SPEC_DIR` detection with the installed corporate approved baseline file:
 - `./.github/skills/local-mcp-setup/corporate-approved-tech.json`
 
 This option is approved for client-integration gaps and does not require tools-team intervention.

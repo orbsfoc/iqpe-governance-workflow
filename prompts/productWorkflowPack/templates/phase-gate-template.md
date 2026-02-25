@@ -4,6 +4,8 @@
 - Phase:
 - Owner:
 - execution_status: draft-only | executed | verified
+- process_readiness: PROCESS_READY | PROCESS_BLOCKED
+- test_readiness: TEST_READY | TEST_BLOCKED
 - Timestamp (UTC):
 
 ## Gate checks

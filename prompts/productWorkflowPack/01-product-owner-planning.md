@@ -16,9 +16,10 @@ Define product intent and requirement baseline for a fresh product domain, const
 - `docs/non-goals.md`
 - `docs/risks-assumptions.md`
 - `docs/repo-topology-decision.md`
-- `docs/openapi-contract-plan.md`
+- `docs/openapi-contract-plan.md` (or equivalent interface-contract plan artifact when non-HTTP interfaces are primary)
 - `docs/data-architecture-decision.md`
 - `docs/plans/index.md`
+- `docs/plans/planning-signoff.md`
 - `docs/plans/repo-change-plan.md`
 - `docs/plans/PLAN-*.md` (when per-story storage is configured)
 - `docs/planning-behavior-resolution.md`
@@ -75,6 +76,7 @@ If topology is `multi-repo`, planning must also provide:
 - workstream-to-repo mapping with primary language/runtime
 - cross-repo integration strategy
 - contract agreement path and contract ownership (OpenAPI when HTTP APIs are involved)
+- contract agreement path and contract ownership (format selected from resolved interface constraints)
 - pack generation/distribution plan (skills/prompts/bootstrap assets)
 - per-repo test evidence mapping (`TEST-UNIT-*`, `TEST-API-*`, `TEST-UI-*`)
 - concurrency plan for independent service streams
@@ -88,14 +90,14 @@ Repository action guidance (mandatory for all topologies):
 
 ## Contract-first planning (mandatory)
 - Define contract baseline before dependent implementation starts.
-- Use OpenAPI for HTTP API boundaries.
-- `docs/openapi-contract-plan.md` must identify:
+- Use interface contract formats resolved by spec/tool evidence and approved constraints (for example OpenAPI/AsyncAPI/schema contracts as applicable).
+- `docs/openapi-contract-plan.md` or equivalent interface-contract plan artifact must identify:
 	- contract owner(s)
 	- versioning and compatibility rules
 	- workstream responsibilities and interface boundaries
 	- review cadence for contract changes
 
-If OpenAPI contract plan is missing, phase status must be `BLOCKED`.
+If the required interface-contract plan artifact is missing, phase status must be `BLOCKED`.
 
 If topology decision is missing, phase status must be `BLOCKED`.
 
@@ -106,7 +108,7 @@ If required plan storage controls are missing or violated, phase status must be 
 ## Data architecture decision (mandatory)
 - Capture canonical runtime data architecture in `docs/data-architecture-decision.md` using `data-architecture-decision-template.md`.
 - This artifact must declare expected runtime database/cache engines and allowed deviations.
-- Planning must assess reuse of standard third-party services (for example SQL/Redis/object-storage compatible offerings) before choosing custom storage implementations.
+- Planning must assess reuse of approved managed/standard platform services compatible with resolved constraints before choosing custom storage implementations.
 - If custom storage is selected, include a balanced tradeoff explanation (cost, performance, durability, scalability, operability, portability/vendor lock-in) and migration/exit strategy.
 - If declared runtime data architecture conflicts with implementation intent and no approved deviation is present, status must be `BLOCKED`.
 
@@ -148,3 +150,4 @@ If conflicts exist, record a decision and rationale in risks/assumptions.
 ## Gate requirement
 Use `templates/phase-gate-template.md`.
 If intent/requirements are incomplete or uncited, mark `BLOCKED`.
+Planning handoff is not complete until `docs/plans/planning-signoff.md` is present (may remain `DRAFT` until architect approval cycle completes).
