@@ -101,13 +101,9 @@ Draft/feedback tree policy (mandatory):
 ADR best-practice rule:
 - For service-oriented systems, individual services should be in individual repositories as the default best-practice.
 - Any exception to service-per-repo must be documented as an ADR decision with rationale, risk, and approval.
-- Code review feedback loops and coding principles (`SOLID`, `DRY`) are mandatory best-practice baseline; see `ADR-BEST-PRACTICE-CODE-QUALITY-AND-REVIEW.md`.
-- General design principles baseline: `ADR-GENERAL-DESIGN-PRINCIPLES.md`.
+- ADR baselines are sourced from MCP tooling/catalog templates and approved corporate sources, not from static markdown payloads in this workflow folder.
 - Runtime/language-specific implementation standards are applied when selected by constraints and tool evidence.
-- Go-specific standards remain available when Go is selected (`ADR-GO-IMPLEMENTATION-STANDARDS.md`, `ADR-GO-DESIGN-PRINCIPLES-HEXAGONAL.md`, `ADR-GO-PREFERRED-DESIGN-PATTERNS-HEXAGONAL.md`).
-- Data separation and usage boundaries baseline: `ADR-DATA-SEPARATION-AND-USAGE-BOUNDARIES.md`.
-- CQRS/read-write pattern guidance: `ADR-CQRS-READ-WRITE-MODEL-PATTERNS.md`.
-- Eventing-specific design patterns and reliability controls are applied when event-driven integration is selected (`ADR-KAFKA-EVENTING-DESIGN-PATTERNS.md` when Kafka is selected).
+- Use MCP template retrieval (`list_templates`, `get_template`, `mcp.action.template_get`) to materialize ADR content into project docs.
 
 MCP-configurable planning behaviors:
 - Load planning behavior profile via MCP from architecture guidance before planning decisions.
