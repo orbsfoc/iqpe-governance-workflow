@@ -103,6 +103,10 @@ ADR best-practice rule:
 - For service-oriented systems, individual services should be in individual repositories as the default best-practice.
 - Any exception to service-per-repo must be documented as an ADR decision with rationale, risk, and approval.
 - Code review feedback loops and coding principles (`SOLID`, `DRY`) are mandatory best-practice baseline; see `ADR-BEST-PRACTICE-CODE-QUALITY-AND-REVIEW.md`.
+- General design principles baseline: `ADR-GENERAL-DESIGN-PRINCIPLES.md`.
+- Go implementation standards baseline: `ADR-GO-IMPLEMENTATION-STANDARDS.md`.
+- Go + hexagonal principle mapping: `ADR-GO-DESIGN-PRINCIPLES-HEXAGONAL.md`.
+- Preferred Go design patterns for hexagonal systems: `ADR-GO-PREFERRED-DESIGN-PATTERNS-HEXAGONAL.md`.
 
 MCP-configurable planning behaviors:
 - Load planning behavior profile via MCP from architecture guidance before planning decisions.
@@ -159,6 +163,9 @@ AI usage reporting template:
 Planning storage templates:
 - `plans-index-template.md` (copy to `docs/plans/index.md`)
 - `story-plan-template.md` (copy to `docs/plans/PLAN-<id>-<slug>.md`)
+- `storage-planning-behavior-template.md` (copy to `docs/plans/storage-planning-behavior.md`)
+- `eventing-planning-behavior-template.md` (copy to `docs/plans/eventing-planning-behavior.md`)
+- `production-capability-planning-behavior-template.md` (copy to `docs/plans/production-capability-planning-behavior.md`)
 
 Draft/promotion and governance templates:
 - `draft-promotion-checklist-template.md`

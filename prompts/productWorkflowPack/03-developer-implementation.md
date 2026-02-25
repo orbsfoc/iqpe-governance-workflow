@@ -17,6 +17,10 @@ Implement code from approved architect plan and diagrams, preserving traceabilit
 - Approved `docs/repo-topology-decision.md`
 - Approved OpenAPI contract baseline and ownership
 - Approved code quality/review ADR baseline (including SOLID/DRY policy)
+- Approved general design principles ADR baseline
+- Approved Go implementation standards ADR baseline
+- Approved Go hexagonal design principles ADR baseline
+- Approved Go preferred design patterns ADR baseline
 - Approved diagram set and mapping table
 - Completed architect phase gate
 - Evidence that requirements were sourced from `SPEC_DIR`

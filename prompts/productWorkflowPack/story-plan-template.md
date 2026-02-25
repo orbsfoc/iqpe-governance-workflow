@@ -26,6 +26,13 @@ Use this template for each story/workstream plan file under `docs/plans/`.
 - Data model/storage changes:
 - Error-path handling notes:
 
+## Production readiness (mandatory)
+- Scalability assumptions and target load:
+- Performance SLO targets (p95/p99 latency, error budget):
+- Maintainability controls (ownership, runbooks, testability):
+- Upgrade strategy (expand/migrate/contract or equivalent):
+- Zero-downtime upgrade plan (traffic shifting, backward compatibility, rollback):
+
 ## Verification plan
 - Unit tests: TEST-UNIT-XXX
 - API tests: TEST-API-XXX
