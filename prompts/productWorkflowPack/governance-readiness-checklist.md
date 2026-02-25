@@ -40,6 +40,7 @@
 - [ ] Non-owner draft deliverables are created under `docs/drafts/workflow/` (not under `docs/feedback/**`)
 - [ ] `mcp.action.feedback_tree_policy_lint` returns PASS (no draft deliverables under `docs/feedback/**`)
 - [ ] `mcp.action.phase_precondition_check` is PASS for current phase before phase authoring starts
+- [ ] `mcp.action.materialize_repos_from_plan` executed before phase-03 PASS when topology is `multi-repo`
 - [ ] `mcp.action.implementation_parity_check` returns PASS before phase-03 PASS
 - [ ] `mcp.action.release_blocker_ownership_lint` returns PASS before final release GO
 - [ ] `docs/known-blockers.md` exists and each open blocker has owner + ETA + evidence path

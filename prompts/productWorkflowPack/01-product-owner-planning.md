@@ -87,6 +87,9 @@ Repository action guidance (mandatory for all topologies):
 - Prefer `update` when an existing repo already matches domain boundary, ownership, and change cadence.
 - Allow `create` only when justified by clear boundary separation, ownership, scaling, or release independence.
 - Record the decision and rationale in `docs/plans/repo-change-plan.md` and mirror in `docs/plans/index.md` target repo fields.
+- Execution semantics (deterministic):
+	- `create`: repository is materialized only if target path does not already exist.
+	- `update`: repository must already exist; workflow must not auto-create missing update targets.
 
 ## Contract-first planning (mandatory)
 - Define contract baseline before dependent implementation starts.

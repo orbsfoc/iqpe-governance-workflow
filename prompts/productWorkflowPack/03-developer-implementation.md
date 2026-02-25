@@ -28,6 +28,9 @@ Implement code from approved architect plan and diagrams, preserving traceabilit
 If any are missing, set status `BLOCKED`.
 
 Before drafting or implementation, run `mcp.action.phase_precondition_check` with `phase=03`; if result is not PASS, stop and keep status `BLOCKED`.
+Run `mcp.action.materialize_repos_from_plan` after planning signoff and before implementation:
+- `create` actions create missing repos from approved plan targets.
+- `update` actions require existing repos; missing update targets remain `BLOCKED`.
 Run `mcp.action.implementation_parity_check` before phase-03 PASS decision; if declared adaptor IDs in `docs/technology-constraints.md` do not match implemented adaptor directories, keep status `BLOCKED` until parity is resolved or approved exception is recorded.
 
 ## Implementation requirements
@@ -47,7 +50,7 @@ For `single-repo`:
 - Keep split workstreams in one repository with clear boundary ownership and traceability.
 
 For `multi-repo`:
-- Scaffold each approved repo/workstream in workspace with explicit paths.
+- Materialize each approved repo/workstream in workspace from `docs/plans/repo-change-plan.md` actions.
 - Create an integration/orchestrator workspace when dependency coordination requires a central integration surface.
 - Generate per-repo implementation packs and per-repo evidence bundles.
 - Maintain cross-repo traceability links from one central index.
